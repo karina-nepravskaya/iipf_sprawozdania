@@ -32,6 +32,8 @@
 |---|---|---|---|
 | | | | |
 
+Dla każdej wielkości wyznaczanej pośrednio zapisz wzór przenoszenia niepewności. Jeżeli któraś zmienna wejściowa ma być przyjęta jako dokładna, podaj uzasadnienie oraz zdanie, które zostanie umieszczone w raporcie.
+
 ## 7. Plan notebooka Colab
 
 - Ścieżka: `data/processed/analiza.ipynb`
