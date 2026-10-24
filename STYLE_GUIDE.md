@@ -39,6 +39,8 @@ Nie opisuj montowania układu, przebiegu zajęć, kolejnych kliknięć w program
 
 - Polski techniczny, prosty, konkretny i spokojny.
 - Zdania raczej krótkie; jeden akapit rozwija jedną myśl.
+- Preferuj dwa pełne zdania zamiast jednego zdania sklejonego średnikiem albo dwukropkiem. Dwukropek stosuj wyłącznie przed rzeczywistym wyliczeniem, definicją albo wyjaśnieniem bezpośrednio wynikającym z poprzedniej części zdania. Średnik stosuj wyjątkowo, gdy dwie części muszą pozostać w jednym zdaniu; w zwykłym opisie zastąp go kropką albo przecinkiem.
+- Nie wstawiaj znaku przestankowego w środku myśli tylko po to, aby zdanie brzmiało „bardziej naukowo”. Najpierw sprawdź, czy treść nie będzie jaśniejsza po rozdzieleniu na dwa zdania.
 - Bez patosu, marketingu i ozdobników: nie używaj „kluczowy”, „fascynujący”, „niewątpliwie”, „bardzo istotny” ani „znacząco” bez liczbowego uzasadnienia.
 - Nie udawaj pewności, której nie dają dane. Zamiast „udowodniono” używaj „otrzymano”, „porównanie wskazuje” albo „wynik jest zgodny w granicach niepewności”.
 - Teoria we Wprowadzeniu służy metodzie i interpretacji; nie jest przepisanym fragmentem instrukcji, Wikipedii lub podręcznika.
