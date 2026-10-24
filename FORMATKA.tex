@@ -1,60 +1,79 @@
-% Formatka sprawozdania IIPF
-% Wzorzec składu: raport_praktyka_Nepravskaya_Karina.pdf
+% Formatka robocza IIPF/PFMB, zgodna z Szablon_TEX_IIPF_PFMB.tex
 % Kompilacja: pdfLaTeX + BibTeX + pdfLaTeX x2
-\documentclass[12pt,a4paper]{article}
+\documentclass[twocolumn,a4paper,polish,10pt]{article}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
-\usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{secdot}
+\usepackage{indentfirst}
 \usepackage{graphicx}
+\usepackage{color}
+\usepackage{sectsty}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage[a4paper,hmargin=2cm,tmargin=1.5cm,bmargin=3cm,footskip=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{siunitx}
-\usepackage{caption}
-\usepackage{float}
 \usepackage[hidelinks]{hyperref}
 
 \sisetup{output-decimal-marker={,},group-separator={\,},detect-weight=true}
-\setlength{\parskip}{0.4em}
+\pagestyle{fancy}
+\lhead{}\chead{}\rhead{}\cfoot{}
+\rfoot{\emph{K.~Nepravskaya}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\cfoot{\thepage{}}
+\sectionfont{\centering\large}
 \graphicspath{{../figures/}}
 
-\title{\textbf{Tytuł ćwiczenia}}
-\author{Karina Nepravskaya}
-\date{Kraków \the\year}
-
 \begin{document}
-\maketitle
 
-\begin{abstract}
-\noindent
-% Cel, metoda i główne wyniki liczbowe z niepewnościami.
-\end{abstract}
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{center}
+\textbf{\large{Tytuł ćwiczenia}}
+\bigskip
+\\K.~Nepravskaya\footnotemark\\
+\small{opiekun: imię i nazwisko prowadzącego}\\
+\textit{II Pracownia Fizyczna}\\
+\small{data rozpoczęcia ćwiczenia: DD.MM.RRRR}
+\end{center}
 
-\tableofcontents
+\begin{quote}\small
+\begin{quote}
+\begin{center}
+\textbf{Streszczenie}
+\end{center}
+% Maksymalnie 200 słów. Podaj cel, metodę, główne wyniki liczbowe
+% z niepewnościami i ewentualnie jeden krótki wniosek.
+\end{quote}
+\end{quote}
+\bigskip
+\bigskip
+\end{@twocolumnfalse}
+]
+\footnotetext{adres e-mail}
 
-\section{Wstęp teoretyczny}
-% Tylko teoria konieczna do opisu metody i interpretacji wyniku.
+\section{Wprowadzenie}
+% Zwięzła teoria, metoda i definicje konieczne do analizy. Cytuj źródła.
 
-\section{Cel ćwiczenia}
+\section{Opis eksperymentu}
+% Aparatura, próbka, procedura i schemat układu.
 
-\section{Aparatura}
+\section{Wyniki i ich dyskusja}
+% Obliczenia, niepewności, wykresy, tabele i interpretacja.
 
-\section{Przebieg doświadczenia}
-% Opis faktycznie wykonanych czynności, w czasie przeszłym i stronie bezosobowej.
-
-\section{Opracowanie wyników}
-% Wprowadź symbole, równania, obliczenia, dopasowania, tabele i wykresy.
-
-\section{Niepewności pomiarowe}
-
-\section{Wyniki}
-
-\section{Wnioski i podsumowanie}
+\section{Podsumowanie i wnioski}
 
 \begin{thebibliography}{9}
 \bibitem{instrukcja}
-Instrukcja do ćwiczenia laboratoryjnego, dostęp: dzień miesiąc rok.
+Instrukcja do ćwiczenia laboratoryjnego.
 \end{thebibliography}
+
+\appendix
+\section{Rachunek niepewności pomiarowych}
+% Szczegóły wyznaczania niepewności przenieś tutaj.
 
 \end{document}
