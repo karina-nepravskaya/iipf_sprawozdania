@@ -9,7 +9,7 @@ Każde ćwiczenie ma niezależny katalog w `cwiczenia/`. Punkt startowy to `cwic
 1. **Analiza.** Agent czyta instrukcję prowadzącego, rzeczywisty przebieg doświadczenia, dane i wymagania. Następnie tworzy `analysis/ANALIZA.md`. Dokument wskazuje fakty, obliczenia, niepewności, plan wykresów, strukturę raportu oraz braki danych. Na tym etapie agent **nie pisze raportu**.
 2. **Raport.** Dopiero po wpisaniu `ZATWIERDZONE` w `analysis/DECYZJA.md` agent przygotowuje `report/main.tex`, tworzy wykresy i kompiluje PDF.
 
-Pełne reguły są w [AGENTS.md](AGENTS.md). Styl, wymagania Pracowni i kontrola końcowa są w [STYLE_GUIDE.md](STYLE_GUIDE.md). Obowiązująca [FORMATKA.tex](FORMATKA.tex) odtwarza układ dokumentu wzorcowego.
+Pełne reguły są w [AGENTS.md](AGENTS.md). Styl, wymagania Pracowni i kontrola końcowa są w [STYLE_GUIDE.md](STYLE_GUIDE.md). Obowiązująca [FORMATKA.tex](FORMATKA.tex) jest gotową wersją oryginalnego [Szablon_TEX_IIPF_PFMB.tex](Szablon_TEX_IIPF_PFMB.tex).
 
 ## Układ ćwiczenia
 
