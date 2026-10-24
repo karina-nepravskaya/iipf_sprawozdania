@@ -29,7 +29,7 @@ Utwórz lub zaktualizuj \`analysis/ANALIZA.md\`. Musi zawierać:
 - listę dostępnych plików danych i ich znaczenie;
 - model fizyczny, równania i jednostki na poziomie III roku studiów;
 - plan obróbki danych krok po kroku;
-- źródła niepewności, ich propagację oraz zasady końcowego zaokrąglania;
+- źródła niepewności, ich propagację pełnym prawem przenoszenia niepewności oraz zasady końcowego zaokrąglania; dla każdej zmiennej przyjętej jako dokładna podaj uzasadnienie i miejsce, w którym zostanie to zapisane w raporcie;
 - listę wykresów, tabel i wyników, które powinny wejść do raportu;
 - plan raportu w układzie IIPF/PFMB;
 - braki, niejednoznaczności i konkretne pytania.
