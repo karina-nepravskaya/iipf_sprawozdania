@@ -1,49 +1,122 @@
-# Analiza przed napisaniem sprawozdania
+# Analiza przed napisaniem sprawozdania Z40/Z34
 
-**Status:** DO ZATWIERDZENIA
+**Status: DO ZATWIERDZENIA. Etap 1.** Dokument jest planem opracowania danych, a nie gotowym sprawozdaniem. Nie zmieniono `report/main.tex`, nie wyznaczono końcowego strumienia neutronów i nie wpisano wyniku zastępczego za brakujące parametry geometrii i aktywacji.
 
-## 1. Cel i wymagania
+## 1. Cel, zakres i wymagania
 
-<!-- Cel oraz wymagania z instrukcji. Przy każdym istotnym wymaganiu wpisz stronę lub sekcję PDF. -->
+Głównym celem jest identyfikacja linii gamma w widmach próbek aktywowanych przez źródło AmBe, wyznaczenie wydajności pełnoenergetycznej detektora HPGe z pomiaru \(^{152}\mathrm{Eu}\), a następnie ocena, czy dane folii o znanych masach pozwalają wyznaczyć **lokalną gęstość strumienia neutronów**. Pomiary \(^{137}\mathrm{Cs}\) i \(^{60}\mathrm{Co}\) oraz zagadnienia z Z34 stanowią pomocniczą kontrolę kalibracji i czasu martwego. Nie wykonano pełnego programu Z34 z porównaniem detektora scyntylacyjnego i półprzewodnikowego.
 
-## 2. Fakty o wykonanym doświadczeniu
+| Źródło | Wymaganie i decyzja dla tych danych |
+|---|---|
+| Z40, s. 1, cel i §1 | Widma aktywacyjne, identyfikacja nuklidów, oszacowanie lokalnego strumienia. W instrukcji dodatkowo wymieniono badanie absorpcji, ale nie ma serii z warstwami absorbenta. |
+| Z40, s. 3–4, równania (9)–(15) | Równanie aktywacji, chłodzenie, czas zliczania, intensywność linii i wydajność zależna od geometrii. |
+| Z40, s. 4–5, §5 pkt 1–6 | Kalibracja energetyczna, czas martwy, kalibracja wydajnościowa, zapis czasów aktywacji i pomiaru, długi pomiar tła. Napięcie detektora było już włączone przed wejściem. |
+| Z40, s. 5, §6 pkt 1–5, 8 | Kalibracja widm i tła, wydajność, pola linii po uwzględnieniu tła, identyfikacja izotopów, strumień i błędy systematyczne. Zadania o absorbentach i czasie życia (§6 pkt 6–7) są warunkowe wobec rzeczywiście zebranych danych. |
+| Z40, s. 6, dodatek A.1, równanie (16); s. 7, rys. 5 | Proponowana parametryzacja \(\ln\varepsilon\) wielomianem trzeciego stopnia w \(\ln E\); tablica linii i parametrów aktywacji. Sprawdzić sens fizyczny i zakres stosowania dopasowania. |
+| Z34, s. 1–2, „Program ćwiczenia” i „Opracowanie wyników” | Kontrola położenia i szerokości pików przez dopasowanie Gaussa z kontinuum, liniowa relacja kanał–energia, ewentualnie rozdzielczość i zależność od obciążenia. Dane nie uzasadniają przedstawienia całego Z34 jako wykonanego ćwiczenia. |
+| Uwagi prowadzącego przekazane w opisie doświadczenia | Widma Cs/Co można opisać krótko jako pomocnicze. Priorytetem jest trzecie widmo Eu z odległości około 16,9 cm. Pola pików należy wyznaczyć dopasowaniem do binów. |
 
-<!-- Tylko informacje z RZECZYWISTY_PRZEBIEG.md i danych. -->
+W Z40, s. 1, przytoczono emisję całego źródła około \((7{,}7\pm1{,}5)\cdot10^5\ \mathrm{n/s}\) dla aktywności Am \(12{,}95\ \mathrm{GBq}\). Jest to **wydajność źródła** \(Q\), a nie \(\phi\) przy folii w \(\mathrm{cm^{-2}s^{-1}}\). Porównanie liczbowe wymaga osobnego modelu transportu i geometrii osłony. Nie wolno dobierać odległości efektywnej ani czasu aktywacji tak, aby wynik „wyszedł” równy \(Q\).
 
-## 3. Materiały wejściowe
+## 2. Fakty o rzeczywistym doświadczeniu
 
-| Plik | Zawartość | Rola w analizie |
-|---|---|---|
-| | | |
+1. W pierwszym dniu detektor był już włączony. W Tukanie istniała kalibracja energii. Rejestrowano kolejno widma Cs i Co przy kilku odległościach, obserwując obciążenie i czas martwy. Następnie zarejestrowano Eu i oceniono wcześniejszą kalibrację. Według notatki wcześniejsze położenia linii były przesunięte o około 2 keV. Nie należy przypisywać wykonania pierwotnej kalibracji ani uruchomienia detektora grupie.
+2. Wśród danych z 16.10 są pięć eksportów Cs (jeden z nich ma bardzo duży czas martwy), trzy kompletne eksporty Co i plik `.wdm` bez odpowiadającego `.lst` dla Co nr 1. Są trzy widma Eu. Trzecie, zarejestrowane przy około 16,9 cm od **powierzchni** detektora, wybrano do wydajności. Jest też osobne widmo Eu z 23.10, służące kontroli/kalibracji późniejszej konfiguracji.
+3. Przed drugim dniem rozpoczęto pomiar tła. Plik `pomiar_tlo_2026_10_23.dat` podaje czas żywy 69 260 s i czas rzeczywisty 69 305 s, czyli około 19,25 h. Po wejściu zatrzymano rejestrację. W części danych jest jedna wartość zliczeń na kanał. Numeracja 0–2047 odpowiada pierwszemu zakresowi, lecz zgodność ustawień i możliwy dryf trzeba sprawdzić na liniach tła.
+4. Na początku drugiego dnia wyjęto uprzednio napromienioną monetę nieznanego pochodzenia i zmierzono jej widmo. W osłonie były także próbki Mn i I. Dwie okrągłe folie Au i Cu umieszczono po przeciwnych stronach walcowego źródła AmBe do aktywacji w czasie dalszych pomiarów. Zdjęcie komory ma pomóc ustalić, które otwory i odległości do źródła wykorzystano.
+5. Mn zmierzono najpierw na węższym zakresie, dostrzegając linię około 847 keV. Po zmianie nastawy wzmacniacza/zakresu wykonano nową kalibrację z użyciem Na i Mn. Należy sprawdzić także linie około 1810 i 2110 keV. Jod zweryfikowano na wcześniejszym zakresie według opisu, ale eksport dwukolumnowy wymaga odrębnego potwierdzenia, z jakim ustawieniem został zapisany. Potem zmierzono drugą monetę.
+6. Pierwszy pomiar Au wykonano około 16,9 cm od powierzchni HPGe i nie zaobserwowano wyraźnego piku około 412 keV. W drugim pomiarze Au leżało na powierzchni detektora i pik był widoczny. Cu także mierzono w kontakcie z powierzchnią. Same dwa widma Au **nie są** serią zaniku przy stałej geometrii.
+7. Z odczytu dostępnego zdjęcia notatek wynika wstępnie \(m_{\rm Au}=0{,}1328\ \mathrm{g}\) oraz \(m_{\rm Cu}=0{,}1479\ \mathrm{g}\). Potwierdzić z fotografią folii i jej opisem, czy są to masy samych folii, z jaką rozdzielczością je ważono i czy żadna masa nie obejmuje opakowania. Odległości zapisane w notatce dla serii Eu oscylują wokół 16,9–17,1 cm. Nie przenosić tych liczb automatycznie na inne próbki.
 
-## 4. Model fizyczny
+Chronologia wynika z relacji użytkownika i nagłówków plików. Rzeczywiste czasy napromieniania oraz chwile wyjęcia folii nie wynikają z samego początku rejestracji widma. Nie należy ich odgadywać z nazw katalogów.
 
-<!-- Pojęcia, równania, definicje symboli i zakres przybliżeń potrzebny w tym ćwiczeniu. -->
+## 3. Materiały i mapa danych
 
-## 5. Plan opracowania danych
+Wszystkie ścieżki w tabeli są względem `cwiczenia/Z40_34/`. Pliki `data/raw/` pozostają bez zmian.
 
-1. 
-2. 
-3. 
+| Pliki | Zawartość i rola |
+|---|---|
+| `instructions/Z40.pdf`, `Z34.pdf` | Instrukcje, odpowiednio model aktywacji i wymagania pracy z detektorami. |
+| `instructions/swiadectwo_wzorcowania_Eu.HEIC` | Świadectwo BW/Z-62/154/17, s. 2/2. \(A_0=(101{,}3\pm2{,}4)\ \mathrm{kBq}\) na 01.01.2018, godz. 12:00 CET. \(T_{1/2}=(13{,}522\pm0{,}016)\) roku. Część aktywna ma średnicę 4 mm, oprawa średnicę 12 mm i wysokość 3 mm. Świadectwo podaje energie i intensywności linii Eu, m.in. 121,8, 344,3, 778,9, 964,1, 1112,1 i 1408,0 keV. Niepewności intensywności nie są podane na widocznej stronie. |
+| `instructions/zdjecia_zeszytu_laboratoryjnego.pdf`, `zdjecie_folii_masy.jpg`, `zdjecie_komory.jpg` | Notatki, masy, odległości i położenie próbek. Odczyt drugiego dnia z dostępnej fotografii jest częściowy. Trzeba zweryfikować cały PDF oraz obie fotografie przed utrwaleniem czasów, mas i geometrii w obliczeniach. |
+| `data/raw/Cs137/`, `Co60/` | Widma z 16.10. Pomocnicza kontrola położenia linii 661,7, 1173,2 i 1332,5 keV, czasu martwego i odległości. Dodatkowy katalog `ylicyenia/` zawiera kopie części `.lst`, a nie nowe serie. |
+| `data/raw/Eu/Eu_1)_…`, `Eu_2_…`, `Eu_3_…` | Trzy widma Eu z 16.10. Trzecie: 522 s czasu żywego, 526 s rzeczywistego, początek 13:21:12. To podstawowy zbiór dla \(\varepsilon(E)\). |
+| `data/raw/23-10-2026 Eu/pomiar1.lst` | Eu z 23.10, 517/520 s, początek 08:51:55. Kontrola położenia linii w dniu pomiarów aktywacyjnych. Nie zamieniać bez wyjaśnienia z trzecim Eu z 16.10. |
+| `data/raw/kalibracja_Europem152_zakres1.clb`, `kalibracja_Mn_Na_zakres2.clb` | Binarne punkty kalibracji Tukana dla dwóch zakresów. Drugi plik zawiera punkty 511,0, 847,0 i 1274,6 keV. Niezależnie zweryfikować przypisania tych trzech linii i dopasować \(E(k)\). |
+| `data/raw/pomiar_tlo_2026_10_23.dat`, `.wdm` | Tło 2048 kanałów, zliczenia i metadane czasowe. `.wdm` jest plikiem natywnym Tukana, nie tabelą CSV. |
+| `data/raw/mangan/Mn_zakres_1.*`, `Mn_zakres_2.*`; `Na_zakres2/`; `jod/` | Dwa pomiary Mn, kalibrant Na na szerszym zakresie i widmo I. Eksporty Na oraz I mają **dwie**, nie trzy kolumny danych. W `Mn_zakres_2.lst` widnieje kolumna energii o starym kroku około 0,726 keV/kanał, mimo że zmieniono zakres. Do szerszego zakresu stosować numer kanału i właściwą kalibrację `.clb`, nie ufać starej kolumnie energii. |
+| `data/raw/moneta/`, `moneta2/` | Dwa osobne pomiary monet. Początki 09:04:07 (4336/4340 s) i 12:29:29 (1499/1500 s). Nie zakładać, że monety mają ten sam skład. |
+| `data/raw/zlota folia_pierwsza odleglosc/`, `zlota folia_druga odleglosc/`, `miedz folia_druga odleglosc/` | Au daleko i w kontakcie, Cu w kontakcie. Początki odpowiednio 12:56:16 (955/956 s), 13:13:12 (1392/1393 s), 13:39:29 (1819/1821 s). Słowo „druga odległość” w nazwie katalogu nie jest pomiarem odległości. |
 
-## 6. Niepewności i ograniczenia
+`.lst` zawiera nagłówek `$DATE_MEA`, `$MEAS_TIM` (najpierw czas żywy, potem rzeczywisty) i zliczenia na kanał. Część plików zawiera także kolumnę energii z eksportu. Należy walidować liczbę 2048 kanałów, kolejność kolumn, duplikaty i sumy zliczeń. Przykładowo Cs nr 5 ma 619/1046 s, czyli około 40,8% czasu martwego; nie jest odpowiednim widmem do precyzyjnej kalibracji bez kontroli efektów obciążenia.
 
-| Wielkość | Źródło niepewności | Typ | Sposób uwzględnienia |
-|---|---|---|---|
-| | | | |
+## 4. Model fizyczny i definicje
 
-## 7. Plan tabel i rysunków
+**Kalibracja energii.** Dla danego ustawienia elektroniki \(E(k)=ak+b\), gdzie \(k\) jest numerem kanału, \(E\) energią w keV, \(a\) w keV/kanał, a \(b\) w keV. Parametry wyznacza się osobno przed zmianą zakresu i po niej. Dla linii dopasować całkę z Gaussa po **granicach binu** plus lokalne kontinuum liniowe, ewentualnie kwadratowe lub dwa nakładające się Gaussy. Pole \(N\) ma jednostkę zliczeń, centroid \(\mu\) kanałów, \(\mathrm{FWHM}=2\sqrt{2\ln2}\,\sigma_k|a|\) w keV. Zdolność rozdzielcza \(R=\mathrm{FWHM}/E\) jest bezwymiarowa. Jakość dopasowania oceniać przez reszty i \(\chi^2/\mathrm{ndf}\) albo wiarygodność Poissona dla małych zliczeń.
 
-| Element | Dane wejściowe | Co ma pokazać |
-|---|---|---|
-| | | |
+**Eu i wydajność.** Aktywność w chwili pomiaru wynosi \(A_{\rm Eu}(t)=A_0\exp(-\lambda_{\rm Eu}\Delta t)\), \(\lambda_{\rm Eu}=\ln2/T_{1/2,\rm Eu}\). \(A_0\) to aktywność ze świadectwa, \(\Delta t\) czas od daty wzorcowania. Dla linii o prawdopodobieństwie emisji \(I_\gamma\) na rozpad i polu netto \(N_\gamma\) wydajność pełnoenergetyczna w **geometrii Eu** to w przybliżeniu \(\varepsilon_{\rm Eu}(E)=N_\gamma/(A_{\rm Eu}I_\gamma t_{\rm live})\). Dla długiego półokresu Eu zmiana aktywności podczas kilkuminutowego pomiaru jest pomijalna, co zostanie policzone i jawnie stwierdzone. Na podstawie punktów przetestować \(\ln\varepsilon=c_3(\ln(E/\mathrm{keV}))^3+c_2(\ln(E/\mathrm{keV}))^2+c_1\ln(E/\mathrm{keV})+c_0\) (Z40, równanie (16)); \(c_j\) są bezwymiarowe. Nie ekstrapolować poza linie Eu i uwzględnić wspólną niepewność \(A_0\).
 
-## 8. Proponowana struktura raportu
+**Aktywacja folii.** Dla stałej lokalnej gęstości strumienia \(\phi\) (\(\mathrm{n\,cm^{-2}s^{-1}}\)) i cienkiej próbki liczba jąder docelowych to \(N_p=m g N_A/M\), gdzie \(m\) jest masą pierwiastka w g, \(g\) abundancją izotopową, \(M\) masą molową w g/mol, \(N_A\) stałą Avogadra. Przekrój czynny \(\sigma\) trzeba podać w \(\mathrm{cm^2}\) (\(1\ \mathrm{b}=10^{-24}\ \mathrm{cm^2}\)). Dla czasu aktywacji \(t_a\), chłodzenia \(t_c\) i pomiaru \(t_r\) oczekiwane pole piku to
 
-1. 
-2. 
-3. 
+\[
+N_\gamma=\frac{t_l}{t_r}\,\varepsilon_{\rm foil}(E)I_\gamma\,\frac{\sigma\phi m g N_A}{M\lambda}\,(1-e^{-\lambda t_a})e^{-\lambda t_c}(1-e^{-\lambda t_r}),\qquad \lambda=\frac{\ln2}{T_{1/2}}.
+\]
 
-## 9. Braki danych i pytania
+Tutaj \(t_l\) jest czasem żywym, \(t_r\) rzeczywistym. Czynnik \(t_l/t_r\) jest przybliżeniem przy równomiernym rozkładzie strat podczas pomiaru. Jeśli Tukan ma inny model korekty, trzeba go sprawdzić. Po przekształceniu otrzymuje się \(\phi\), **nie** całkowitą emisję źródła. Dla Au użyć \(^{197}\mathrm{Au}(n,\gamma)^{198}\mathrm{Au}\), linii około 412 keV. Dla Cu rozważyć \(^{63}\mathrm{Cu}(n,\gamma)^{64}\mathrm{Cu}\), ale 511 keV pochodzi z anihilacji i jest nieswoiste. Z40, s. 7, podaje orientacyjnie \(\sigma_{\rm Au}=98{,}8\ \mathrm b\), \(T_{1/2,\rm Au}=232675{,}2\ \mathrm s\), \(g_{\rm Au}=1\), \(I_{\rm Au}\approx0{,}95\), a dla \(^{63}\mathrm{Cu}\) \(\sigma=4{,}5\ \mathrm b\), \(T_{1/2}=46080\ \mathrm s\), \(g=0{,}6915\) i wpis \(I_{511}=0{,}38\). Sprawdzić definicję intensywności 511 keV (dwa fotony na rozpad \(\beta^+\)) i wkład tła przed użyciem Cu ilościowo. Tabela Z40 dla \(^{56}\mathrm{Mn}\) podaje \(154{,}8\) pod nagłówkiem sekund, co wygląda na pomyłkę jednostki (wartość odpowiada minutom). Nie przenosić tej liczby do obliczeń zaniku bez weryfikacji.
 
-<!-- Pytania muszą być konkretne. Jeżeli braków nie ma, wpisz „Brak”. -->
+**Geometria i wielkości, których nie wolno utożsamiać.** \(\varepsilon_{\rm Eu}(E,16{,}9\ \mathrm{cm})\) nie jest \(\varepsilon_{\rm foil}(E,0\ \mathrm{cm})\). Dla źródła punktowego i detektora w polu dalekim przybliżony współczynnik ma postać \(G=[(d_{\rm Eu}+d_0)/(d_{\rm foil}+d_0)]^2\), gdzie \(d_0\) jest odległością powierzchni obudowy od efektywnego obszaru rejestracji. Przy kontakcie folii z obudową i skończonej powierzchni kryształu przybliżenie \(1/r^2\) może rażąco zawieść. Przeniesienie wydajności wymaga zmierzonego \(d_0\), wymiarów folii i kryształu oraz najlepiej osobnego pomiaru transferowego lub zweryfikowanego modelu kąta bryłowego i absorpcji. Bez tego można podać pole piku i analizę czułości \(\phi(d_0)\), ale nie rzetelną pojedynczą wartość \(\phi\). Nawet poprawna \(\phi\) przy folii w moderującej osłonie nie daje \(Q=4\pi r^2\phi\) bez modelu pola neutronowego i transportu.
+
+## 5. Plan obróbki i notebooka Colab na etap 2
+
+1. W `data/processed/analiza.ipynb` wczytać z `data/raw/` wszystkie istotne `.lst` i tło `.dat`, zachować surowe zliczenia, metadane, sumy kontrolne, czasy żywe i rzeczywiste. Obsłużyć warianty dwóch i trzech kolumn. Nie modyfikować plików wejściowych. Dla widm drugiego zakresu odbudować energię z kanału, a nie z odziedziczonej kolumny.
+2. Sporządzić tabelę osi czasu. Z nagłówków wyznaczyć początki i końce rejestracji. Z notatek ustalić oddzielnie włożenie i wyjęcie każdej folii, lokalizację względem AmBe, czas przełożenia do HPGe, masy i odległości. Nie podstawiać umownych \(t_a\) i \(t_c\).
+3. Wykonać dopasowania centroidów Eu, Cs, Co, Na i Mn do histogramów kanałowych. Porównać starą kalibrację z liniami referencyjnymi, osobno dopasować linię \(E(k)\) dla dwóch ustawień i pokazać reszty. Sprawdzić, czy faktyczne przesunięcie około 2 keV jest stałe, oraz czy I ma skalę pierwszego czy drugiego zakresu. Obliczyć \(1-t_l/t_r\) dla serii odległościowych i nie opierać kalibracji na silnie obciążonym Cs nr 5.
+4. Tłu przypisać kanały 0–2047. Dla pierwszego zakresu sprawdzić zgodność linii tła i monety z kalibracją z dnia 23.10. Jeżeli występuje dryf, wyznaczyć go z linii, udokumentować interpolację wraz z korelacjami i nie przesuwać tła „na oko”. Skala zliczeń dla widma próbki to \(\alpha=t_{l,\rm sample}/t_{l,\rm bg}\). Dla drugiego zakresu odejmować tło dopiero po prawidłowym odwzorowaniu energii i rebinowaniu z uwzględnieniem wariancji; jeżeli brak zgodności zakresu uniemożliwia to, dopasować lokalne kontinuum i jawnie zaznaczyć ograniczenie.
+5. Dla trzeciego Eu z 16.10 dopasować całkowanego Gaussa wraz z tłem lokalnym do wybranych, odseparowanych linii ze świadectwa. Pokazać pola, centroidy, FWHM, niepewności z macierzy kowariancji, reszty i kryterium odrzucenia linii nakładających się. Wyliczyć aktywność źródła na datę pomiaru oraz \(\varepsilon_{\rm Eu}(E)\). Dopasować model z Z40 i porównać z prostszym/interpolacją, jeżeli wielomian oscyluje lub daje niefizyczną wydajność. Dodatkowy Eu z 23.10 służy sprawdzeniu dryfu, nie ukrytej zmianie geometrii.
+6. Dla Mn, I, obu monet, Au i Cu przedstawić widma z przypisaniem **potwierdzonych** linii. Pola wybranych pików wyznaczyć przy tłe lub lokalnym kontinuum. Pierwszy Au potraktować jako brak detekcji albo górną granicę z określonym poziomem ufności, jeśli wynik dopasowania jest zgodny z zerem. Drugi Au oraz Cu nadają się do badania aktywacji tylko po rozwiązaniu geometrii i chronologii.
+7. Wyliczyć lokalny \(\phi\) oddzielnie z Au i, jeżeli 511 keV jest wiarygodne, z Cu. Przeprowadzić wariantową analizę \(G\) z fizycznie uzasadnionym przedziałem parametrów i zachować wspólne korelacje kalibracji. Jeśli brak transferu wydajności lub czasów napromieniania, przedstawić **warunkowy** wynik jako funkcję tych parametrów albo tylko ograniczenie. Nie wyprowadzać liczby \(Q\) przez dopasowanie do deklaracji producenta.
+8. Każda liczba, tabela, wykres i przyjęta wartość referencyjna użyta w późniejszym raporcie ma być odtwarzalna z notebooka lub przypisana do konkretnej strony instrukcji, świadectwa bądź potwierdzonej notatki. Notebook jest zadaniem etapu 2. W etapie 1 nie tworzono go.
+
+## 6. Niepewności i sposób ich przenoszenia
+
+Stosować pełne prawo \(u^2(y)=\boldsymbol J\boldsymbol C\boldsymbol J^{\mathsf T}\), gdzie \(J_i=\partial y/\partial x_i\), a \(C_{ij}=\operatorname{cov}(x_i,x_j)\). W notebooku zachować macierze kowariancji dopasowań. Składniki niezależne statystyczne i wspólne systematyczne pokazać osobno przed złożeniem. W razie silnej nieliniowości, zwłaszcza przy transferze geometrii kontaktowej i niskich zliczeniach, sprawdzić rozkład wyniku symulacją/propagacją próbek zamiast liniowego przybliżenia.
+
+| Wielkość | Źródło i rachunek |
+|---|---|
+| Pole piku \(N\) | Zliczenia w kanałach są Poissona. Po odjęciu tła \(z_i=n_i-\alpha b_i\), \(u^2(z_i)=n_i+\alpha^2b_i+b_i^2u^2(\alpha)\), a wspólna \(\alpha\) tworzy \(\operatorname{cov}(z_i,z_j)=b_i b_j u^2(\alpha)\) dla \(i\ne j\). Nie zastępować ujemnych reszt zerami w dopasowaniu. Niepewność pola i centroidu z kowariancji dopasowania, z kontrolą okien i tła. |
+| Kalibracja \(E=ak+b\) | \(u^2(E)=k^2u^2(a)+a^2u^2(k)+u^2(b)+2k\operatorname{cov}(a,b)\), jeśli \(k\) jest niezależne od kalibracji. W razie tych samych pików użytych do obu wielkości zachować pełną wspólną kowariancję. Szerokość \(W=2\sqrt{2\ln2}\,|a|\sigma_k\) i \(R=W/E\) propagować z pochodnych oraz kowariancji. Dryf zakresu to oddzielny składnik systematyczny. |
+| Aktywność Eu | Dla \(A=A_0e^{-\lambda\Delta t}\): \(u^2(A)=e^{-2\lambda\Delta t}u^2(A_0)+(A\Delta t)^2u^2(\lambda)+(A\lambda)^2u^2(\Delta t)\) plus wyrazy kowariancyjne, jeśli istnieją. \(u(\lambda)=\ln2\,u(T)/T^2\). Ze świadectwa są \(u(A_0)=2{,}4\ \mathrm{kBq}\) i \(u(T)=0{,}016\) roku. Wyjaśnić, czy wartość \(2{,}4\) kBq jest niepewnością rozszerzoną, zanim potraktuje się ją jako standardową. |
+| Wydajność \(\varepsilon=N/(A I t_l)\) | Względna niepewność przy niezależności: \(u_r^2(\varepsilon)=u_r^2(N)+u_r^2(A)+u_r^2(I)+u_r^2(t_l)\). Dla wielu linii \(A\) jest wspólne, więc \(\operatorname{cov}(\ln\varepsilon_i,\ln\varepsilon_j)\) zawiera \(u_r^2(A)\). Intensywności bez deklarowanych niepewności nie stają się „dokładne”; trzeba znaleźć źródło \(u(I)\) lub oszacować wrażliwość i jawnie oznaczyć brak. Parametry krzywej i interpolacja niosą pełną kowariancję. |
+| Transfer Eu–folia | Jeśli użyto przybliżenia \(G=((d_E+d_0)/(d_F+d_0))^2\), \(u^2(G)=\boldsymbol\nabla G^{\mathsf T} C_{d_E,d_F,d_0}\boldsymbol\nabla G\). Dla niezależnych odległości \(\partial\ln G/\partial d_E=2/(d_E+d_0)\), \(\partial\ln G/\partial d_F=-2/(d_F+d_0)\), \(\partial\ln G/\partial d_0=2[(d_E+d_0)^{-1}-(d_F+d_0)^{-1}]\). Dodać niepewność modelu, rozmiaru folii i samoabsorpcji. Bez \(d_0\) nie ma uczciwej liczby \(u(G)\). |
+| Strumień \(\phi\) | Niepewności \(N,\varepsilon,I,\sigma,m,g,M,t_a,t_c,t_r,t_l,\lambda\) przenieść z wzoru w §4 przez pełny gradient i kowariancje. Przy niezależnych wejściach suma kwadratów logarytmicznych zawiera m.in. \((u_N/N)^2+(u_\varepsilon/\varepsilon)^2+(u_m/m)^2+(u_\sigma/\sigma)^2+(u_I/I)^2\). Dla czasów \(\partial\ln\phi/\partial t_a=-\lambda/(e^{\lambda t_a}-1)\), \(\partial\ln\phi/\partial t_c=\lambda\), \(\partial\ln\phi/\partial t_r=-\lambda/(e^{\lambda t_r}-1)+1/t_r\) przy stałym \(t_l\), a \(\partial\ln\phi/\partial t_l=-1/t_l\). Dla \(\lambda\): \(1/\lambda-t_a/(e^{\lambda t_a}-1)+t_c-t_r/(e^{\lambda t_r}-1)\). Wspólne \(\varepsilon\) i geometria korelują wyniki Au/Cu. |
+| Masy i stałe tablicowe | Ustalić rozdzielczość wagi dla \(m\), źródło i niepewność \(\sigma,g,M,I,T_{1/2}\). Przekrój termiczny jest założeniem o widmie neutronów, a nie dokładną stałą dla całego pola AmBe. Zmienność energii neutronów i ekranowanie są składnikami modelowymi. |
+
+**Dokładne z definicji:** numeracja całkowitych kanałów 0–2047, \(N_A=6{,}02214076\cdot10^{23}\ \mathrm{mol^{-1}}\), przeliczniki jednostek i \(\ln2\). Uzasadnienie ich dokładności zapisać w dodatku z rachunkiem niepewności. Pozostałych danych wejściowych nie deklarować dokładnymi bez źródła. Jeśli do wyniku poglądowego konieczne będzie warunkowe przyjęcie \(g\), \(M\) lub \(I\) bez dostępnego \(u\), napisać przy odpowiednim wzorze w raporcie: „Przyjęto wartość tablicową [symbol] bez podanej niepewności. Jej wkładu nie uwzględniono w liczbowej niepewności, dlatego jest ona warunkowa”. Liczby w końcowym raporcie zaokrąglić dopiero po obliczeniach: niepewność w górę do dwóch cyfr znaczących, wartość do tego samego miejsca dziesiętnego.
+
+## 7. Plan wykresów, tabel i wyników
+
+| Element | Funkcja |
+|---|---|
+| Tabela osi czasu i konfiguracji | Źródło, zakres, odległość, początek, \(t_l\), \(t_r\), czas martwy, dane o aktywacji/chłodzeniu i status potwierdzenia. |
+| Kalibracja obu zakresów z resztami | Pokazać punkty, \(a,b\), niepewności i przesunięcia względem referencji. |
+| Widma Cs/Co, Eu, Mn/I i próbek | Zwarty wybór, każde z osiami i jednostkami, wskazane linie oraz skala szarości czytelna po wydruku. Cs/Co najwyżej krótki element pomocniczy, nie rozbudowana historia wszystkich odległości. |
+| Przykładowe dopasowania pików Eu i tabela linii | Gauss całkowany po binach, lokalne tło, pole netto, centroid, FWHM, reszty, uzasadnienie wykluczonych linii. |
+| Wydajność \(\varepsilon_{\rm Eu}(E)\) | Punkty z niepewnościami, krzywa z Z40, zakres interpolacji i wspólny składnik kalibracyjny. Jawny podpis „geometria Eu 16,9 cm”. |
+| Fragment widm Au i Cu około 412 i 511 keV | Widmo, tło, dopasowanie i górna granica dla pierwszego Au, jeśli brak istotnego sygnału. |
+| Wynik aktywacji lub analiza wrażliwości | \(\phi_{\rm Au}\), ewentualnie \(\phi_{\rm Cu}\), z rozdziałem niepewności i założeń; gdy dane nie wystarczą, wykres \(\phi\) od geometrii zamiast pozornej liczby. Nie wpisywać \(Q\) jako wyniku folii. |
+
+## 8. Proponowany układ raportu w etapie 2
+
+Zgodnie z `FORMATKA.tex` i `STYLE_GUIDE.md`: blok tytułowy i streszczenie do 200 słów; **Wprowadzenie** (zwięzły model i cel), **Opis eksperymentu** (rzeczywisty przebieg, dwie konfiguracje, tło i geometria), **Wyniki i ich dyskusja** (kalibracja, Eu, widma aktywacyjne, ograniczenia strumienia), **Podsumowanie i wnioski**, **Literatura**, **Dodatek** (rachunek i założenia niepewności). Dwie kolumny, do 6 stron, bez przypisywania czynności osobom, jeżeli wykonawca nie wpływa na metodę. Wymagania Z40 o absorberach i zaniku zostaną opisane jako niewykonane, nie jako wyniki.
+
+## 9. Braki, decyzje i konkretne pytania
+
+1. **Czasy aktywacji:** kiedy dokładnie włożono i wyjęto Au oraz Cu? Czy obu foliom przypisano ten sam czas i czy były w symetrycznych pozycjach względem AmBe? Potrzebne godziny, nie szacunek na podstawie startu pomiaru.
+2. **Chłodzenie i geometria HPGe:** kiedy wyjęto folie, kiedy położono je na detektorze, czy kontakt oznaczał bezpośrednio obudowę/kapturek, jakie były średnice folii i odległość Eu 16,9 cm mierzona od której płaszczyzny? Czy dostępne są rysunek techniczny kryształu, jego promień i odsadzenie albo pomiar źródłem Eu również na powierzchni? Bez transferu wydajności nie ma identyfikowalnej pojedynczej \(\phi\).
+3. **Masy:** czy potwierdzone odczyty to Au 0,1328 g i Cu 0,1479 g, z jaką dokładnością wagi i czystością folii? Zweryfikować na `zdjecie_folii_masy.jpg` oraz wszystkich stronach zeszytu.
+4. **Kalibracja drugiego zakresu:** czy Na, Mn i I na pewno zostały wyeksportowane przy przypisanych nastawach? Zapis w `.lst` Mn z drugiego zakresu nadal pokazuje starą oś, a Na/I mają tylko kanał i zliczenia. Potwierdzenie ma rozstrzygnąć wybór kalibracji dla I.
+5. **Dane jądrowe:** jakie źródło niepewności prawdopodobieństw emisji i przekrojów przyjęto na zajęciach? Czy 511 keV w Cu ma być ilościowym wskaźnikiem \(^{64}\mathrm{Cu}\), czy tylko identyfikacją jakościową? Przy tej linii tło i inne emitery wymagają osobnej kontroli.
+6. **Cel porównania z AmBe:** czy prowadzący oczekuje lokalnej \(\phi\) przy folii, czy szacunku całkowitej emisji \(Q\) z osobnym modelem osłony? Wartość \((7{,}7\pm1{,}5)\cdot10^5\ \mathrm{n/s}\) jest referencją dla \(Q\), nie celem dopasowania \(\phi\).
+7. **Dostęp do obrazów:** konektor GitHub odczytuje tekstowe widma, ale odrzuca binarne PDF/JPG/HEIC. Treść Z40 i Z34 oraz świadectwa sprawdzono z lokalnych kopii o zgodnych identyfikatorach plików; odczyt notatek drugiego dnia jest częściowy. Przed etapem 2 konieczne jest obejrzenie pełnego `zdjecia_zeszytu_laboratoryjnego.pdf`, `zdjecie_folii_masy.jpg` i `zdjecie_komory.jpg` bez zakładania, że wcześniejszy odczyt wyczerpuje zawartość.
+
+**Rekomendacja:** wykonać pełną kalibrację i analizę linii Eu oraz widm aktywacyjnych. Dla folii podać wynik liczbowy dopiero po potwierdzeniu chronologii i wiarygodnego transferu wydajności. Jeżeli te informacje pozostaną niedostępne, zachować wyłącznie warunkową zależność \(\phi\) od parametrów i jasno wskazać ograniczenie. Po zatwierdzeniu tej analizy lub rozstrzygnięciu pytań można rozpocząć etap 2.
