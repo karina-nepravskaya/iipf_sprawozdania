@@ -1,79 +1,401 @@
-% Formatka robocza IIPF/PFMB, zgodna z Szablon_TEX_IIPF_PFMB.tex
-% Kompilacja: pdfLaTeX + BibTeX + pdfLaTeX x2
-\documentclass[twocolumn,a4paper,polish,10pt]{article}
-
-\usepackage[polish]{babel}
+% Z40 — raport IIPF/PFMB. Kompilator: pdfLaTeX.
+% Wgraj report/main.tex oraz pięć plików PNG do równoległego figures/.
+% Uzupełnij opiekuna i adres e-mail: nie podano ich w materiałach.
+\documentclass[twocolumn,a4paper,10pt]{article}
+\IfFileExists{polish.ldf}{\usepackage[polish]{babel}}{\usepackage[provide=*,polish]{babel}}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{secdot}
-\usepackage{indentfirst}
-\usepackage{graphicx}
-\usepackage{color}
-\usepackage{sectsty}
+\usepackage{lmodern,secdot,indentfirst,graphicx,color,sectsty}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage[a4paper,hmargin=2cm,tmargin=1.5cm,bmargin=3cm,footskip=2cm]{geometry}
-\usepackage{fancyhdr}
-\usepackage{amsmath,amssymb}
-\usepackage{booktabs}
-\usepackage{siunitx}
+\usepackage{fancyhdr,amsmath,amssymb,booktabs}
 \usepackage[hidelinks]{hyperref}
-
-\sisetup{output-decimal-marker={,},group-separator={\,},detect-weight=true}
 \pagestyle{fancy}
-\lhead{}\chead{}\rhead{}\cfoot{}
-\rfoot{\emph{K.~Nepravskaya}}
+\lhead{}\chead{}\rhead{}\cfoot{\thepage}\rfoot{\emph{K.~Nepravskaya}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\cfoot{\thepage{}}
 \sectionfont{\centering\large}
-\graphicspath{{../figures/}}
-
+\graphicspath{{../figures/}{figures/}}
+\newcommand{\opiekun}{do uzupełnienia}
+\newcommand{\emailautorki}{do uzupełnienia}
 \begin{document}
-
 \twocolumn[
 \begin{@twocolumnfalse}
 \begin{center}
-\textbf{\large{Tytuł ćwiczenia}}
+\textbf{\large{Spektrometria gamma i aktywacja neutronowa folii Au oraz Cu}}
 \bigskip
 \\K.~Nepravskaya\footnotemark\\
-\small{opiekun: imię i nazwisko prowadzącego}\\
+\small{opiekun: \opiekun}\\
 \textit{II Pracownia Fizyczna}\\
-\small{data rozpoczęcia ćwiczenia: DD.MM.RRRR}
+\small{data rozpoczęcia ćwiczenia: 16.10.2026}
 \end{center}
-
-\begin{quote}\small
-\begin{quote}
-\begin{center}
-\textbf{Streszczenie}
-\end{center}
-% Maksymalnie 200 słów. Podaj cel, metodę, główne wyniki liczbowe
-% z niepewnościami i ewentualnie jeden krótki wniosek.
-\end{quote}
-\end{quote}
+\begin{quote}\small\begin{quote}
+\begin{center}\textbf{Streszczenie}\end{center}
+Zarejestrowano widma gamma próbek aktywowanych neutronami źródła AmBe
+i wyznaczono wydajność pełnoenergetyczną detektora HPGe na podstawie
+13 linii $^{152}$Eu. Po odjęciu długiego pomiaru tła i dopasowaniu
+profilu Gaussa otrzymano dla folii złotej przy energii
+$411{,}8~\mathrm{keV}$ pole $(198{,}5\pm20{,}1)$ zliczeń,
+a dla folii miedzianej przy $511~\mathrm{keV}$
+$(92{,}0\pm19{,}5)$ zliczeń. Przy uproszczonym przeliczeniu wydajności
+z geometrii Eu do geometrii folii obliczono lokalną gęstość strumienia
+$(2480\pm280)\,\mathrm{n\,cm^{-2}s^{-1}}$ z Au oraz
+$(4620\pm1000)\,\mathrm{n\,cm^{-2}s^{-1}}$ z Cu. Podane niepewności
+nie obejmują ograniczeń modelu geometrii ani przypisania całego
+pola linii 511~keV do $^{64}$Cu.
+\end{quote}\end{quote}
 \bigskip
-\bigskip
-\end{@twocolumnfalse}
-]
-\footnotetext{adres e-mail}
+\end{@twocolumnfalse}]
+\footnotetext{Adres e-mail: \emailautorki.}
 
 \section{Wprowadzenie}
-% Zwięzła teoria, metoda i definicje konieczne do analizy. Cytuj źródła.
+Celem ćwiczenia było rozpoznanie linii gamma w widmach, wyznaczenie
+wydajności detektora HPGe oraz oszacowanie lokalnej gęstości strumienia
+neutronów na podstawie aktywacji folii Au i Cu. Model aktywacji
+i zależność wydajności od energii przyjęto z instrukcji
+Z40~\cite{z40,dodatkowe}. Pole linii pełnoenergetycznej można przeliczyć
+na aktywność, znając prawdopodobieństwo emisji fotonu i wydajność
+detektora dla jego energii oraz położenia próbki.
+
+Wynik wyrażony w $\mathrm{n\,cm^{-2}s^{-1}}$ opisuje strumień
+w miejscu folii w przyjętym modelu. Instrukcja podaje emisję całego
+źródła AmBe około $(7{,}7\pm1{,}5)\cdot10^5\,\mathrm{n/s}$
+\cite{z40}. Te wielkości mają inne jednostki; ich porównanie
+liczbowe wymaga modelu transportu i geometrii osłony.
 
 \section{Opis eksperymentu}
-% Aparatura, próbka, procedura i schemat układu.
+Do pomiarów wykorzystano detektor HPGe ORTEC GMX25P4-70 i program
+Tukan. Detektor był już włączony, a w programie istniała wcześniejsza
+kalibracja energii. Zmierzono widma Cs i Co w kilku położeniach, aby
+sprawdzić linie, wpływ odległości na częstość zliczeń i czas martwy.
+Przy bliskim położeniu Cs udział czasu martwego przekroczył
+$40~\mathrm{\%}$. Zarejestrowano trzy widma $^{152}$Eu.
+Trzeci pomiar wykonano około $16{,}9~\mathrm{cm}$ od powierzchni
+obudowy przez $522~\mathrm{s}$ czasu żywego. Wybrano go do
+kalibracji wydajności. Linie tego widma były przesunięte o około
+$2~\mathrm{keV}$ względem świadectwa; zapisanej osi
+energii nie zmieniano wstecz.
+
+Przed pomiarami aktywacyjnymi zarejestrowano tło przez
+$69260~\mathrm{s}$ czasu żywego. Zliczeniom w kolejnych kanałach
+przypisano kalibrację energetyczną zakresu użytego dla monet.
+Z osłony źródła AmBe wyjęto wcześniej napromienioną monetę
+i zarejestrowano jej widmo. W osłonie napromieniano także Mn i I.
+Folie Au i Cu umieszczono symetrycznie po przeciwnych stronach
+walcowego źródła i aktywowano podczas dalszych pomiarów.
+Pierwsze widmo Mn pokazało linię około 847~keV. Po zmianie zakresu
+rejestracji zmierzono Mn ponownie i zastosowano kalibrację nowego
+zakresu z Na oraz Cu. Widmo I pozostało na poprzedniej skali.
+Zarejestrowano też widmo drugiej monety.
+
+Folię Au o masie $0{,}1328~\mathrm{g}$ napromieniano około
+$3{,}5~\mathrm{h}$, a Cu o masie $0{,}1479~\mathrm{g}$ około
+$4~\mathrm{h}$. Pierwszy pomiar Au rozpoczęto po $61~\mathrm{s}$
+chłodzenia z odległości około $16{,}9~\mathrm{cm}$.
+Następnie folię położono na obudowie detektora; drugi pomiar
+rozpoczęto po łącznie $1084~\mathrm{s}$ od zdjęcia z AmBe.
+Folię Cu zmierzono na obudowie po około $60~\mathrm{s}$
+chłodzenia. Czasy aktywacji i chłodzenia Cu były oszacowaniami.
 
 \section{Wyniki i ich dyskusja}
-% Obliczenia, niepewności, wykresy, tabele i interpretacja.
+\subsection*{Widma pomocnicze i kalibracja energii}
+Energię $E$ kanału $k$ obliczono z $E(k)=ak+b$, oddzielnie
+dla obu zakresów. W drugim zakresie z pliku kalibracji uzyskano
+$E(k)=(1{,}81930247k-1{,}34743419)\,\mathrm{keV}$.
+Poprawiono według niej kolumnę energii drugiego eksportu Mn;
+surowe zliczenia pozostawiono bez zmian.
+
+Na rys.~\ref{fig:pomocnicze} pokazano przykładowe widma Cs, Co,
+Mn, Na i I. Dla Cs dalej od detektora maksimum wystąpiło przy
+$(662{,}0\pm0{,}2)$~keV, a blisko, przy dużym czasie martwym,
+$(668{,}5\pm0{,}2)$~keV. Dla Co otrzymano
+$(1172{,}1\pm0{,}2)$ i $(1330{,}3\pm0{,}2)$~keV.
+Pierwszy zakres Mn pokazał $(847{,}0\pm0{,}2)$~keV,
+a drugi $(846{,}4\pm0{,}5)$, $(1810{,}7\pm0{,}5)$
+i $(2112{,}7\pm0{,}5)$~keV. W Na widoczne były maksima
+$(511{,}7\pm0{,}5)$ i $(1274{,}0\pm0{,}5)$~keV,
+a w I $(442{,}8\pm0{,}2)$~keV. Niepewności w tym akapicie
+oznaczają wyłącznie odczyt środka kanału
+$u_{\rm bin}=\Delta E/\sqrt{12}$; nie obejmują kalibracji
+ani wahań położenia maksimum.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.80\textwidth]{widma_pomocnicze.png}
+\caption{Wybrane widma pomocnicze w częstości zliczeń.
+Czerwone wartości na osi i pionowe linie przerywane
+wskazują tablicowe energie linii.
+Pola tych pików nie były wyznaczane.}
+\label{fig:pomocnicze}
+\end{figure*}
+
+Widma monet pokazano na rys.~\ref{fig:monety}. Pierwsza dała
+maksimum około $(510{,}3\pm0{,}2)$~keV, druga około
+$(511{,}0\pm0{,}2)$~keV, z tą samą ograniczoną definicją
+niepewności. Zaznaczono również linie około 239, 352,
+610 i 1461~keV. Ostatnia występuje też w tle, a sama
+energia linii 511~keV nie określa składu monet.
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{monety.png}
+\caption{Widma monet i tło podzielone przez czas żywy.
+Górną serię przedstawiono półprzezroczystą linią;
+wartości na osi i pionowe linie przerywane wskazują
+wybrane energie.}
+\label{fig:monety}
+\end{figure}
+
+\subsection*{Pola pików $^{152}$Eu i wydajność}
+Od zliczeń Eu odjęto tło przeskalowane czynnikiem
+$\alpha=t_{l,\rm Eu}/t_{l,\rm tlo}$, gdzie $t_l$ oznacza
+czas żywy. Ponieważ widmo Eu i późniejsze tło miały
+nieco przesunięte osie energii, odjęcie tła w kanałach
+było przybliżeniem dla wąskich linii. W lokalnym oknie
+dopasowano profil Gaussa
+zintegrowany po szerokości kanału i prostą opisującą
+kontinuum:
+\begin{equation}
+\begin{aligned}
+n_i^{\rm mod}={}&A\left[
+\Phi\!\left(\frac{k_i+\frac12-\mu}{s}\right)\right.\\
+&\left.{}-\Phi\!\left(\frac{k_i-\frac12-\mu}{s}\right)
+\right]+B+C(k_i-\mu).
+\end{aligned}
+\label{eq:gauss}
+\end{equation}
+Tu $k_i$ jest numerem kanału, $\Phi$ dystrybuantą normalną,
+$\mu$ środkiem piku, $s$ jego szerokością, $A$ pełnym polem
+gaussowskim, a $B,C$ opisują kontinuum. Pole netto $N=A$
+i $u(N)$ pochodzą z dopasowania po odjęciu tła. Przedział
+$\mu\pm3s$ zawiera $99{,}73\%$ pola. Cztery przykładowe
+dopasowania są na rys.~\ref{fig:eu_gauss}, a wszystkie 13
+w notebooku~\cite{notebook}.
+\begin{figure*}[t]
+\centering\includegraphics[width=.73\textwidth]{eu_dopasowania.png}
+\caption{Wybrane linie $^{152}$Eu. Czarne: widmo; zielone:
+przeskalowane tło; niebieskie: tło i kontinuum; czerwone:
+dopasowanie. Nagłówki podają energie ze świadectwa, podczas
+gdy oś zachowuje zapisaną kalibrację.}
+\label{fig:eu_gauss}
+\end{figure*}
+
+Aktywność ze świadectwa $A_0=(101{,}3\pm2{,}4)$~kBq
+z 1.01.2018 i okres $T_{1/2,\rm Eu}=(13{,}522\pm0{,}016)$~roku
+przeliczono na chwilę pomiaru:
+\begin{equation}
+A_{\rm Eu}=A_0\,2^{-\Delta t/T_{1/2,\rm Eu}}
+=(64{,}56\pm1{,}53)\,\mathrm{kBq},
+\label{eq:activity}
+\end{equation}
+gdzie $\Delta t$ oznacza upływ czasu. Niepewność $2{,}4$~kBq
+warunkowo przyjęto jako standardową; jej rodzaju nie podano
+na widocznej stronie świadectwa. Zmiana aktywności w ciągu
+$526~\mathrm{s}$ pomiaru była pomijalna.
+Wydajność w geometrii Eu wyznaczono z
+\begin{equation}
+\varepsilon_{\rm Eu}(E)=
+\frac{N_{\rm Eu}(E)}{A_{\rm Eu}I_\gamma(E)t_{l,\rm Eu}},
+\label{eq:eff}
+\end{equation}
+gdzie $I_\gamma$ jest prawdopodobieństwem emisji linii
+ze świadectwa~\cite{cert}. Wyniki zestawiono
+w tab.~\ref{tab:eu}.
+\begin{table*}[t]
+\centering\small
+\caption{Wszystkie linie $^{152}$Eu: pola netto i wydajności
+dla geometrii $16{,}9~\mathrm{cm}$. Niepewności
+wydajności są warunkowe, według dodatku.}
+\label{tab:eu}
+\begin{tabular}{rrrr@{\qquad}rrrr}
+\toprule
+$E$ [keV] & $I_\gamma$ [\%] & $N$ & $\varepsilon$ [\%] &
+$E$ [keV] & $I_\gamma$ [\%] & $N$ & $\varepsilon$ [\%]\\
+\midrule
+121,8 & 28,4 & $31710\pm190$ & $0,3313\pm0,0081$ &
+964,1 & 14,5 & $3201\pm60$ & $0,0655\pm0,0020$\\
+244,7 & 7,6 & $5442\pm84$ & $0,2125\pm0,0060$ &
+1085,8 & 10,1 & $2119\pm50$ & $0,0623\pm0,0021$\\
+344,3 & 26,6 & $14530\pm130$ & $0,1621\pm0,0041$ &
+1112,1 & 13,4 & $2757\pm56$ & $0,0611\pm0,0019$\\
+411,1 & 2,4 & $1026\pm42$ & $0,1269\pm0,0059$ &
+1212,9 & 1,4 & $257\pm21$ & $0,0544\pm0,0046$\\
+444,0 & 3,1 & $1435\pm46$ & $0,1374\pm0,0054$ &
+1299,1 & 1,6 & $269\pm19$ & $0,0499\pm0,0037$\\
+778,9 & 13,0 & $3467\pm64$ & $0,0791\pm0,0024$ &
+1408,0 & 20,9 & $3527\pm61$ & $0,0501\pm0,0015$\\
+867,4 & 4,2 & $1018\pm40$ & $0,0719\pm0,0033$ &
+ & & & \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Punkty dopasowano do funkcji z instrukcji Z40:
+\begin{equation}
+\ln\varepsilon_{\rm Eu}(E)=c_3x^3+c_2x^2+c_1x+c_0,\quad
+x=\ln\!\left(\frac{E}{\mathrm{keV}}\right).
+\label{eq:curve}
+\end{equation}
+Otrzymano bezwymiarowe
+$c_3=0{,}065\pm0{,}017$,
+$c_2=-1{,}22\pm0{,}29$,
+$c_1=6{,}8\pm1{,}7$ i $c_0=-17{,}2\pm3{,}3$.
+Podano warunkowe niepewności parametrów z dopasowania,
+a obliczenia prowadzono z pełną precyzją współczynników.
+Wykres~\ref{fig:efficiency} zawiera 13 punktów i krzywą.
+Lokalne dopasowania przy 121,8 i 1085,8~keV gorzej
+opisują kształt widma, a model nie powinien być
+ekstrapolowany poza zmierzone energie.
+\begin{figure*}[t]
+\centering\includegraphics[width=.78\textwidth]{folie_dopasowania.png}
+\caption{Lokalne obszary widm Au i Cu po odjęciu
+przeskalowanego tła. Słupki oznaczają kanały, linia
+czerwona dopasowanie Gaussa z prostą, a niebieska
+kropkowana lokalne kontinuum. Pionowe linie
+przerywane wskazują energie tablicowe.}
+\label{fig:foils}
+\end{figure*}
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{wydajnosc_eu.png}
+\caption{Wydajność pełnoenergetyczna dla trzeciego
+pomiaru $^{152}$Eu; linia to równanie~(\ref{eq:curve}).}
+\label{fig:efficiency}
+\end{figure}
+
+\subsection*{Folie i lokalna gęstość strumienia}
+W pierwszym pomiarze Au z odległości $16{,}9~\mathrm{cm}$
+pik około 412~keV nie był rozróżnialny od tła.
+Po umieszczeniu Au na obudowie dla linii
+$411{,}8~\mathrm{keV}$ otrzymano
+$N_{\rm Au}=(198{,}5\pm20{,}1)$ zliczeń netto.
+W Cu dla obszaru 511~keV uzyskano
+$N_{\rm Cu}=(92{,}0\pm19{,}5)$ zliczeń.
+Oba dopasowania przedstawiono na rys.~\ref{fig:foils}.
+Instrukcja przypisuje linię 511~keV reakcji
+$^{63}$Cu$(n,\gamma){}^{64}$Cu~\cite{dodatkowe}.
+Obliczenie dla Cu zakłada, że całe pole netto pochodzi
+z $^{64}$Cu. Sama energia fotonów anihilacyjnych
+nie stanowi wyłącznego potwierdzenia pochodzenia linii.
+
+
+Karta detektora podaje odstęp okno--kryształ
+$3~\mathrm{mm}$ oraz długość kryształu
+$70~\mathrm{mm}$~\cite{detector}. Przyjęto umowną
+płaszczyznę rejestracji w połowie kryształu,
+czyli $d_0=0{,}3+7{,}0/2=3{,}8$~cm od obudowy.
+Prosty transfer wydajności miał postać
+\begin{equation}
+\begin{aligned}
+G&=\left(\frac{16{,}9\,\mathrm{cm}+d_0}{d_0}\right)^2
+=29{,}674,\\
+\varepsilon_{\rm f}(E)&=G\varepsilon_{\rm Eu}(E).
+\end{aligned}
+\label{eq:geometry}
+\end{equation}
+Otrzymano $\varepsilon_{\rm f}(411{,}8\,\mathrm{keV})
+=0{,}04116$ dla Au i $\varepsilon_{\rm f}
+(511\,\mathrm{keV})=0{,}03409$ dla Cu.
+Wartość $d_0$ jest założeniem, a nie zmierzoną
+głębokością pochłaniania. W geometrii kontaktowej
+prawo odwrotnych kwadratów stanowi przybliżenie.
+
+Liczba jąder docelowych wynosi $N_p=mgN_A/M$,
+gdzie $m$ oznacza masę, $g$ abundancję izotopu,
+$N_A$ stałą Avogadra, a $M$ masę molową.
+Dla lokalnej gęstości strumienia $\phi$, przekroju
+czynnego $\sigma$ i $\lambda=\ln2/T_{1/2}$ model
+aktywacji daje
+\begin{align}
+N_\gamma={}&\frac{t_l}{t_r}\varepsilon_{\rm f}I_\gamma
+\frac{\sigma\phi mgN_A}{M\lambda}
+(1-e^{-\lambda t_a})e^{-\lambda t_c}
+(1-e^{-\lambda t_r}),\label{eq:counts}\\
+\phi={}&\frac{N_\gamma M\lambda t_r e^{\lambda t_c}}
+{\varepsilon_{\rm f}I_\gamma t_l\sigma mgN_A
+(1-e^{-\lambda t_a})(1-e^{-\lambda t_r})}.
+\label{eq:flux}
+\end{align}
+Tu $t_a$ jest czasem aktywacji, $t_c$ chłodzenia,
+$t_l$ pomiaru żywego, a $t_r$ pomiaru rzeczywistego.
+Przeliczono $1\,\mathrm b=10^{-24}\,\mathrm{cm^2}$.
+Dla $^{197}$Au$(n,\gamma){}^{198}$Au przyjęto
+$\sigma=98{,}8$~b, $T_{1/2}=232675{,}2$~s,
+$g=1$, $I_\gamma=0{,}95$, $M=196{,}967$~g/mol.
+Dla $^{63}$Cu$(n,\gamma){}^{64}$Cu:
+$\sigma=4{,}5$~b, $T_{1/2}=46080$~s,
+$g=0{,}6915$, $I_{511}=0{,}38$,
+$M=62{,}93$~g/mol~\cite{dodatkowe}.
+Rzeczywiste i żywe czasy pomiaru wyniosły odpowiednio
+$(1393,1392)$~s dla Au i $(1821,1819)$~s dla Cu.
+Po podstawieniu do równania~(\ref{eq:flux}) otrzymano
+\begin{align}
+\phi_{\rm Au}&=(2480\pm280)\,\mathrm{n\,cm^{-2}s^{-1}},\\
+\phi_{\rm Cu}&=(4620\pm1000)\,\mathrm{n\,cm^{-2}s^{-1}}.
+\label{eq:results}
+\end{align}
+Cu dało około $1{,}86$ razy większe oszacowanie niż Au.
+Bliska geometria, przybliżone czasy, widmo energii
+neutronów oraz silna linia 511~keV w tle ograniczają
+wiarygodność tych wartości. Folie napromieniano
+po przeciwnych stronach źródła, zatem ich warunki
+mogły się różnić.
 
 \section{Podsumowanie i wnioski}
+Na podstawie 13 linii $^{152}$Eu wyznaczono
+wydajność detektora w geometrii $16{,}9~\mathrm{cm}$.
+Pomiary Au i Cu dały dwa warunkowe oszacowania
+lokalnej gęstości strumienia:
+$(2480\pm280)$ i $(4620\pm1000)
+\,\mathrm{n\,cm^{-2}s^{-1}}$.
+Pierwszy pomiar Au z większej odległości nie
+ujawnił piku 412~keV ponad tłem. Rozbieżność obu
+oszacowań i niejednoznaczność całego pola 511~keV
+nie pozwalają przypisać jednej dokładnej wartości
+strumienia obu foliom.
 
 \begin{thebibliography}{9}
-\bibitem{instrukcja}
-Instrukcja do ćwiczenia laboratoryjnego.
+\bibitem{z40} Instrukcja do ćwiczenia Z40,
+\emph{Aktywacja neutronowa}, II Pracownia Fizyczna, UJ, s.~1--7.
+\bibitem{dodatkowe} \emph{Aktywacja neutronowa — materiały
+dodatkowe}, tabela parametrów reakcji Au i Cu.
+\bibitem{cert} Świadectwo wzorcowania źródła
+$^{152}$Eu nr BW/Z-62/154/17, 5.12.2017, s.~2.
+\bibitem{detector} ORTEC, \emph{GMX Series HPGe Coaxial
+Detector System}, karta modelu GMX25P4-70, załącznik 2.
+\bibitem{notebook} K.~Nepravskaya,
+\emph{analiza.ipynb}, notebook obliczeniowy Z40/Z34,
+\texttt{data/processed/analiza.ipynb}.
 \end{thebibliography}
 
 \appendix
-\section{Rachunek niepewności pomiarowych}
-% Szczegóły wyznaczania niepewności przenieś tutaj.
-
+\section{Rachunek niepewności}
+Niepewność $u(N)$ pola netto pochodzi z lokalnego
+dopasowania równania~(\ref{eq:gauss}) po odjęciu tła.
+Surowym liczbom zliczeń nie przypisywano osobnych
+niepewności w tabelach. Z prawa przenoszenia dla
+równania~(\ref{eq:activity}) otrzymano
+\begin{equation}
+u(A)=A\sqrt{\left(\frac{u(A_0)}{A_0}\right)^2+
+\left(\frac{\ln2\,\Delta t}{T_{1/2,\rm Eu}^2}
+u(T_{1/2,\rm Eu})\right)^2}.
+\label{eq:uactivity}
+\end{equation}
+Przy niezależnych $N$ i $A$ zastosowano
+\begin{align}
+u(\varepsilon)&=\varepsilon\sqrt{
+\left(\frac{u(N)}{N}\right)^2+
+\left(\frac{u(A)}{A}\right)^2},\label{eq:ueff}\\
+u(\phi)&=\phi\sqrt{
+\left(\frac{u(N_\gamma)}{N_\gamma}\right)^2+
+\left(\frac{u(\varepsilon_{\rm Eu})}
+{\varepsilon_{\rm Eu}}\right)^2}.
+\label{eq:uflux}
+\end{align}
+W tym rachunku $I_\gamma$, czasy żywe, masy
+z etykiet i tablicowe parametry aktywacji
+potraktowano jako zadane wartości dokładne,
+gdyż nie podano ich niepewności. Także $G$
+przyjęto jako ustalony współczynnik.
+Niepewność $\varepsilon_{\rm Eu}$ przy energii
+folii oszacowano z najbliższego punktu Eu i $u(A)$.
+Niepewności przy wynikach strumienia są zatem
+warunkowe: nie obejmują geometrii, przybliżonych
+czasów aktywacji ani modelu przekroju czynnego.
 \end{document}

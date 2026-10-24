@@ -1,6 +1,6 @@
 # Analiza przed napisaniem sprawozdania Z40/Z34
 
-**Status: DO ZATWIERDZENIA. Etap 1.** Dokument jest planem opracowania danych, a nie gotowym sprawozdaniem. Nie zmieniono `report/main.tex`, wyznaczono jedynie warunkowe oszacowanie lokalnej gęstości strumienia neutronów i nie wpisano wyniku zastępczego za brakujące parametry geometrii i aktywacji.
+**Status: ZATWIERDZONE. Etap 1 zakończony 24.10.2026; etap 2 rozpoczęty na bezpośrednią prośbę użytkowniczki.** Dokument jest planem opracowania danych, a nie gotowym sprawozdaniem. Nie zmieniono `report/main.tex`, wyznaczono jedynie warunkowe oszacowanie lokalnej gęstości strumienia neutronów i nie wpisano wyniku zastępczego za brakujące parametry geometrii i aktywacji.
 
 ## 1. Cel, zakres i wymagania
 
@@ -159,3 +159,7 @@ Zgodnie z `FORMATKA.tex` i `STYLE_GUIDE.md`: blok tytułowy i streszczenie do 20
 - Świadectwo Eu nie wyjaśnia na widocznej stronie, czy zapisane $\pm2,4\ \mathrm{kBq}$ jest niepewnością standardową czy rozszerzoną. Wyniki liczbowe przyjmują ją jako standardową. Intensywności linii i czasy żywe potraktowano jako dokładne dane wejściowe w tym rachunku.
 
 **Rekomendacja:** w raporcie skupić rachunek na Eu oraz obu foliach Au i Cu; resztę widm pokazać poglądowo. Oba wyniki strumienia nazwać warunkowymi i podać przyjęte $d_0=3,8$ cm. Etap 2 rozpocząć dopiero po zatwierdzeniu analizy.
+
+## 10. Decyzje przy redakcji raportu
+
+Wykresy widm pomocniczych oznaczają energie tablicowe wartościami na osi E i pionowymi liniami przerywanymi; maksima kanałowe pozostają podane osobno w tekście. Bliski Cs leżał na obudowie detektora, a węższy pik Cs pochodzi z położenia około 16,9 cm. Górną krzywą na wykresie monet narysowano jako ostatnią z częściową przezroczystością. Legenda dopasowań folii jest pod panelami. Raport składano z pięciu PNG wygenerowanych przez notebook. Brak nazwiska opiekuna i adresu e-mail oznaczono jako pola do uzupełnienia.

@@ -1,11 +1,5 @@
 # Decyzja po analizie
 
-**Status:** OCZEKUJE NA ZATWIERDZENIE
+ZATWIERDZONE
 
-Po przeczytaniu ANALIZA.md wpisz poniżej jedną z opcji:
-
-- `ZATWIERDZONE`
-- `DO POPRAWY: ...`
-- `BRAKUJE DANYCH: ...`
-
-Nie zmieniaj statusu na „ZATWIERDZONE”, jeżeli nadal istnieją pytania, od których zależą liczby, metoda analizy albo treść raportu.
+Analizę zatwierdzono przez bezpośrednie polecenie użytkowniczki „napisz teraz sprawozdanie” z 24.10.2026. Etap 2 obejmuje sprawozdanie Z40, obie folie Au i Cu oraz wykresy uzgodnione w rozmowie. Brak danych opiekuna pozostawiono jawnie do uzupełnienia w metadanych raportu. Wyniki strumienia pozostają warunkowe zgodnie z analizą.
