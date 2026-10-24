@@ -41,14 +41,14 @@ Jeżeli dane pozwalają na kilka sensownych metod, opisz warianty i rekomendacj�
 Rozpocznij wyłącznie po zatwierdzeniu analizy.
 
 1. Zaktualizuj analizę o decyzje użytkowniczki.
-2. Skopiuj \`FORMATKA.tex\` jako punkt wyjścia dla \`report/main.tex\`; zachowaj dwie kolumny, blok tytułowy i streszczenie na pierwszej stronie.
+2. Skopiuj `FORMATKA.tex` jako punkt wyjścia dla `report/main.tex`; zachowaj dwie kolumny, blok tytułowy i streszczenie na pierwszej stronie.
 3. Wypełnij metadane: tytuł, opiekun, pracownia, data rozpoczęcia i e-mail.
-4. Obliczenia wykonuj w skrypcie lub notebooku w \`data/processed/\`; zachowaj dane pośrednie.
-5. Wygeneruj wykresy w \`figures/\`, z opisanymi osiami, jednostkami, niepewnościami i rozróżnieniem serii także w skali szarości.
-6. Napisz \`report/main.tex\` w układzie: Wprowadzenie, Opis eksperymentu, Wyniki i ich dyskusja, Podsumowanie i wnioski, Literatura; rachunek niepewności umieść w Dodatku.
+4. Dla każdego ćwiczenia utwórz i aktualizuj notebook `data/processed/analiza.ipynb`, zgodny z Google Colab. Notebook jest częścią analizy, a nie jednorazowym szkicem: wczytuje dane z `data/raw/`, zawiera opis kroków, obliczenia, tabele pośrednie, propagację niepewności, generowanie wykresów i końcowe wartości użyte w raporcie. Nie wstawiaj do raportu liczby, której nie można odtworzyć w notebooku albo bezpośrednio w danych źródłowych.
+5. Wygeneruj wykresy w `figures/`, z opisanymi osiami, jednostkami, niepewnościami i rozróżnieniem serii także w skali szarości. Zapisz kod generujący je w notebooku.
+6. Napisz `report/main.tex` w układzie: Wprowadzenie, Opis eksperymentu, Wyniki i ich dyskusja, Podsumowanie i wnioski, Literatura; rachunek niepewności umieść w Dodatku.
 7. Utrzymaj streszczenie do 200 słów oraz dokument do 6 stron, chyba że prowadzący wyraźnie postanowił inaczej.
 8. Skompiluj dokument i sprawdź: streszczenie, jednostki, zaokrąglenia, interpunkcję po wzorach, nierozdzielanie liczb i jednostek, numerację, odwołania, dane źródłowe oraz brak ostrzeżeń wpływających na wynik.
-9. Zapisz gotowy PDF w \`report/\`.
+9. Zapisz gotowy PDF w `report/` i zacommituj razem ze źródłami jego odtwarzania: `main.tex`, wykresami, danymi przetworzonymi oraz notebookiem.
 
 ## Język i styl
 
