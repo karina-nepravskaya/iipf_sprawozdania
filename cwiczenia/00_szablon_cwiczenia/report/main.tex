@@ -1,5 +1,6 @@
+% Formatka sprawozdania IIPF
+% Wzorzec składu: raport_praktyka_Nepravskaya_Karina.pdf
 % Kompilacja: pdfLaTeX + BibTeX + pdfLaTeX x2
-% Przed redakcją przeczytaj ../analysis/ANALIZA.md i ../analysis/DECYZJA.md.
 \documentclass[12pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
@@ -15,27 +16,37 @@
 \usepackage[hidelinks]{hyperref}
 
 \sisetup{output-decimal-marker={,},group-separator={\,},detect-weight=true}
+\setlength{\parskip}{0.4em}
 \graphicspath{{../figures/}}
 
-\title{Tytuł ćwiczenia}
+\title{\textbf{Tytuł ćwiczenia}}
 \author{Karina Nepravskaya}
 \date{Kraków \the\year}
 
 \begin{document}
 \maketitle
 
+\begin{abstract}
+\noindent
+% Cel, metoda i główne wyniki liczbowe z niepewnościami.
+\end{abstract}
+
+% Odkomentuj wyłącznie, gdy wymaga tego prowadzący lub długość raportu.
+% \tableofcontents
+% \newpage
+
 \section{Wstęp teoretyczny}
-% Tylko teoria potrzebna do metody i interpretacji.
+% Tylko teoria konieczna do opisu metody i interpretacji wyniku.
 
 \section{Cel ćwiczenia}
 
 \section{Aparatura}
 
 \section{Przebieg doświadczenia}
-% Opisz faktyczny przebieg w formie bezosobowej.
+% Opis faktycznie wykonanych czynności, w czasie przeszłym i stronie bezosobowej.
 
 \section{Opracowanie wyników}
-% Zdefiniuj symbole, podaj równania, pokaż obliczenia i wykresy.
+% Wprowadź symbole, równania, obliczenia, dopasowania, tabele i wykresy.
 
 \section{Niepewności pomiarowe}
 
