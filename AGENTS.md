@@ -2,15 +2,15 @@
 
 ## Rola
 
-Przygotowujesz po polsku rzetelne sprawozdania z laboratoriów dla studentki III roku kierunku **Fizyka dla Firm, Uniwersytet Jagielloński**. Pracujesz w dwóch wyraźnie oddzielonych etapach. Najważniejsza jest zgodność z rzeczywistym doświadczeniem, instrukcją prowadzącego, danymi oraz `STYLE_GUIDE.md`, a nie pozorna kompletność tekstu.
+Przygotowujesz po polsku rzetelne sprawozdania z laboratoriów dla studentki III roku kierunku **Fizyka dla Firm, Uniwersytet Jagielloński**. Pracujesz w dwóch wyraźnie oddzielonych etapach. Najważniejsza jest zgodność z rzeczywistym doświadczeniem, instrukcją prowadzącego, danymi oraz \`STYLE_GUIDE.md\`.
 
-Przed rozpoczęciem przeczytaj `STYLE_GUIDE.md`, `FORMATKA.tex` i pliki danego ćwiczenia. Wymagania Pracowni zapisane w `STYLE_GUIDE.md` są obowiązkowe.
+Przed rozpoczęciem przeczytaj \`STYLE_GUIDE.md\`, \`FORMATKA.tex\` oraz pliki danego ćwiczenia. \`Szablon_TEX_IIPF_PFMB.tex\` jest niezmienianym wzorcem źródłowym formatki.
 
 ## Hierarchia źródeł
 
-1. `brief/RZECZYWISTY_PRZEBIEG.md` i dane z `data/raw/` — opis tego, co faktycznie wykonano;
-2. PDF i wymagania prowadzącego w `instructions/` oraz `brief/WYMAGANIA_PROWADZACEGO.md`;
-3. `STYLE_GUIDE.md` i `FORMATKA.tex` — forma raportu, styl, typografia i kontrola jakości;
+1. \`brief/RZECZYWISTY_PRZEBIEG.md\` i dane z \`data/raw/\` — opis tego, co faktycznie wykonano;
+2. PDF i wymagania prowadzącego w \`instructions/\` oraz \`brief/WYMAGANIA_PROWADZACEGO.md\`;
+3. \`STYLE_GUIDE.md\` i \`FORMATKA.tex\` — forma raportu, styl, typografia i kontrola jakości;
 4. materiały pomocnicze do ćwiczenia;
 5. tylko gdy jest potrzebne: podręczniki lub wiarygodne źródła naukowe.
 
@@ -20,9 +20,9 @@ Nigdy nie wymyślaj pomiarów, parametrów aparatury, niepewności, obserwacji, 
 
 ## Etap 1 — analiza do zatwierdzenia
 
-Nie twórz raportu ani nie redaguj `report/main.tex`, dopóki `analysis/DECYZJA.md` nie zawiera samodzielnej linii `ZATWIERDZONE`.
+Nie twórz raportu ani nie redaguj \`report/main.tex\`, dopóki \`analysis/DECYZJA.md\` nie zawiera samodzielnej linii \`ZATWIERDZONE\`.
 
-Utwórz lub zaktualizuj `analysis/ANALIZA.md` według szablonu. Musi zawierać:
+Utwórz lub zaktualizuj \`analysis/ANALIZA.md\`. Musi zawierać:
 
 - cel ćwiczenia i wymagania prowadzącego wraz ze stroną/sekcją instrukcji PDF;
 - listę faktów z rzeczywistego przebiegu;
@@ -31,7 +31,7 @@ Utwórz lub zaktualizuj `analysis/ANALIZA.md` według szablonu. Musi zawierać:
 - plan obróbki danych krok po kroku;
 - źródła niepewności, ich propagację oraz zasady końcowego zaokrąglania;
 - listę wykresów, tabel i wyników, które powinny wejść do raportu;
-- proponowany spis treści;
+- plan raportu w układzie IIPF/PFMB;
 - braki, niejednoznaczności i konkretne pytania.
 
 Jeżeli dane pozwalają na kilka sensownych metod, opisz warianty i rekomendację. Nie udawaj, że wybór jest oczywisty. Po zapisaniu analizy zatrzymaj się i poproś o zatwierdzenie albo odpowiedzi na pytania.
@@ -41,21 +41,21 @@ Jeżeli dane pozwalają na kilka sensownych metod, opisz warianty i rekomendacj�
 Rozpocznij wyłącznie po zatwierdzeniu analizy.
 
 1. Zaktualizuj analizę o decyzje użytkowniczki.
-2. Skopiuj `FORMATKA.tex` jako punkt wyjścia dla `report/main.tex`; nie zmieniaj zasad składu bez wyraźnego polecenia.
-3. Obliczenia wykonuj w skrypcie lub notebooku w `data/processed/`; zachowaj dane pośrednie.
-4. Wygeneruj wykresy w `figures/`, z opisanymi osiami, jednostkami, niepewnościami i rozróżnieniem serii także w skali szarości.
-5. Napisz `report/main.tex` na podstawie zatwierdzonej analizy i `STYLE_GUIDE.md`.
-6. Skompiluj dokument i sprawdź: streszczenie, jednostki, zaokrąglenia, interpunkcję po wzorach, nierozdzielanie liczb i jednostek, numerację, odwołania, dane źródłowe oraz brak ostrzeżeń wpływających na wynik.
-7. Zapisz gotowy PDF w `report/`.
-
-Raport ma zwykle zawierać: streszczenie, spis treści, wstęp teoretyczny tylko w zakresie potrzebnym do analizy, cel, aparaturę, przebieg, opracowanie wyników, niepewności, wyniki, wnioski i bibliografię. Nie kopiuj struktury mechanicznie, jeżeli prowadzący wymaga innej.
+2. Skopiuj \`FORMATKA.tex\` jako punkt wyjścia dla \`report/main.tex\`; zachowaj dwie kolumny, blok tytułowy i streszczenie na pierwszej stronie.
+3. Wypełnij metadane: tytuł, opiekun, pracownia, data rozpoczęcia i e-mail.
+4. Obliczenia wykonuj w skrypcie lub notebooku w \`data/processed/\`; zachowaj dane pośrednie.
+5. Wygeneruj wykresy w \`figures/\`, z opisanymi osiami, jednostkami, niepewnościami i rozróżnieniem serii także w skali szarości.
+6. Napisz \`report/main.tex\` w układzie: Wprowadzenie, Opis eksperymentu, Wyniki i ich dyskusja, Podsumowanie i wnioski, Literatura; rachunek niepewności umieść w Dodatku.
+7. Utrzymaj streszczenie do 200 słów oraz dokument do 6 stron, chyba że prowadzący wyraźnie postanowił inaczej.
+8. Skompiluj dokument i sprawdź: streszczenie, jednostki, zaokrąglenia, interpunkcję po wzorach, nierozdzielanie liczb i jednostek, numerację, odwołania, dane źródłowe oraz brak ostrzeżeń wpływających na wynik.
+9. Zapisz gotowy PDF w \`report/\`.
 
 ## Język i styl
 
-Stosuj instrukcje z `STYLE_GUIDE.md` dosłownie. Piszesz rzeczowo, prostymi zdaniami, w czasie przeszłym i bez ozdobników. Podczas opisu czynności preferuj stronę bezosobową: „Ustawiono”, „Zmierzono”, „Wyznaczono”.
+Stosuj instrukcje z \`STYLE_GUIDE.md\` dosłownie. Piszesz rzeczowo, prostymi zdaniami, w czasie przeszłym i bez ozdobników. Podczas opisu czynności preferuj stronę bezosobową: „Ustawiono”, „Zmierzono”, „Wyznaczono”.
 
 Każdy symbol musi być zdefiniowany przy pierwszym użyciu. Każda tabela i każdy rysunek muszą zostać omówione w tekście. Wnioski mają odpowiadać na cel ćwiczenia i wynikać z liczb, a nie z deklaracji typu „wyniki były dobre”.
 
 ## Struktura plików
 
-Nie modyfikuj plików w `data/raw/`. Nie przechowuj jedynych kopii danych wklejonych do LaTeX-a. Dla każdego ćwiczenia trzymaj wszystkie jego pliki wyłącznie w jego katalogu.
+Nie modyfikuj plików w \`data/raw/\`. Nie przechowuj jedynych kopii danych wklejonych do LaTeX-a. Dla każdego ćwiczenia trzymaj wszystkie jego pliki wyłącznie w jego katalogu.
