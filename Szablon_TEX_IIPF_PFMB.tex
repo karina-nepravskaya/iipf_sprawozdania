@@ -1,0 +1,152 @@
+\documentclass[twocolumn, a4paper, polish, 10pt]{article}
+\usepackage[polish]{babel} 	
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{secdot}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{sectsty}%pozwala na zmianê typu czcionki paragrafu
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{fiolet}{cmyk}{0.47,1,0.07,0.33}
+\usepackage[a4paper, hmargin=2cm, tmargin=1.5cm, bmargin=3cm, footskip=2cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\cfoot{}
+\rfoot{\emph{A.~Student}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\cfoot{\thepage{}}
+%\lfoot{\footnotesize{\textit{a.student@student.uj.edu.pl}}}
+
+
+
+\begin{document}
+
+\sectionfont{\centering\large}%kolor czcionki oraz centrowanie tytułu paragrafu
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{center}
+\textbf{\large{Tytuł ćwiczenia}}
+\bigskip
+\\A.~Student\footnotemark \\ \small{opiekun: dr hab. Tomasz Nowak}\\\textit{Pracownia Metod Fizycznych Biologii}\\
+\small{data rozpoczęcia ćwiczenia: \today}\\
+\end{center}
+
+%Abstrakt
+\begin{quote}\small{
+\begin{quote}
+\begin{center}
+\textbf{Streszczenie}
+\end{center}
+To opracowanie jest szablonem pisemnego sprawozdania z ćwiczeń wykonywanych przez studentów fizyki i biofizyki w ramach odpowiednio II Pracowni Fizycznej (IIPF) i Pracowni Fizycznych Metod Biologii (PFMB) w Instytucie Fizyki Uniwersytetu Jagiellońskiego. Zawiera szczegółowe wskazówki dotyczące układu tekstu oraz zawartości poszczególnych sekcji. Szablon został sporządzony z użyciem pakietu \LaTeX\@, który jest standardowym pakietem służącym do przygotowania publikacji w większości czasopism naukowych. Sprawozdanie, w swojej treści i formie, musi stanowić dowód opanowania przez studenta całego eksperymentu i powinno cechować się zwięzłym i poprawnym językiem polskim. Jego długość nie może przekraczać \textbf{6 stron}.\\ Zasadnicze znaczenie dla każdego artykułu naukowego ma \emph{Streszczenie}, gdyż jest czytane przez największą liczbę osób. Powinno ono krótko (\textbf{do 200 słów}) przedstawiać cel, metodę i najważniejsze ilościowe wyniki wraz z ich niepewnościami i ewentualnie krótki wniosek.
+\end{quote}
+}
+\end{quote}
+ \bigskip
+    \bigskip
+\end{@twocolumnfalse}
+]
+\footnotetext{a.student@student.uj.edu.pl}
+
+\section{Wprowadzenie}
+Ważnym elementem wykształcenia fizyka i biofizyka jest umiejętność korzystania ze standardowych narzędzi, takich jak \LaTeX\@ czy Word, które umożliwiają dzielenie się wynikami pracy z innymi, w ogólnie przyjętej i profesjonalnej formie. Spędzenie nieco czasu na studiowaniu i modyfikowaniu tego dokumentu pozwoli doskonalić umiejętność używania \LaTeX a/Worda, po to aby sprawnie tworzyć potrzebne dokumenty techniczne. Szczegółowe instrukcje dotyczące kompilacji dokumentów \LaTeX, w różnych systemach operacyjnych, znajdują się w \emph{Dodatku A}.\\
+
+Każde sprawozdanie rozpoczyna się od \emph{Wprowadzenia}. Wprowadzenie powinno zawierać - w zakresie ustalonym z prowadzącym ćwiczenie - najistotniejsze informacje dotyczące teorii i metody eksperymentalnej oraz definicje i równania niezbędne dla wykonania ćwiczenia i opracowania wyników pomiarów. Należy dołożyć wszelkich starań aby ta część sprawozdania była zwięzła, a jednocześnie zrozumiała dla koleżanki/kolegi, studenta IIPF i PFMB, który nie posiada szczegółowej wiedzy dotyczącej akurat tego eksperymentu. Warto przy tym skorzystać z możliwości odesłania czytelnika do odpowiednich pozycji książkowych, artykułów lub stron internetowych, których referencje należy podać w sekcji \emph{Literatura}. Absolutnie nie wolno przepisywać wstępów z instrukcji ćwiczenia ani umieszczać kilkustronicowych wypisów z Wikipedii, encyklopedii czy podręczników i książek naukowych. Należy na bieżąco odsyłać czytelnika do pozycji literaturowych, będących źródłem informacji, które podajemy w danym zdaniu lub akapicie.
+
+Jedną z największych zalet pakietu \LaTeX\@ (w mniejszym stopniu pakietu Word) jest umiejętne składanie wszelkiego rodzaju wyrażeń matematycznych. W sprawozdaniach najczęstszym typem równań są równania jednoliniowe, takie jak np. równanie (\ref{eq:rownanie})
+\begin{equation}
+    \chi_+(x)=x^2+\frac{\partial y}{\partial x} \times \sqrt{\langle \psi |\alpha^\dag| \phi \rangle}-\cos\theta.
+\label{eq:rownanie}
+\end{equation}
+Czasami jednak istnieje konieczność wprowadzenia równań, które zajmują więcej niż jedną linię dwu-kolumnowej strony. Dobrym rozwiązaniem w takim przypadku jest podział równania na kilka linii i przydzielenie im jednego numeru jak w równaniu (\ref{eq:multirownanie})
+\begin{eqnarray}
+    |M_g^v|^2 &=& \sum_{n=1}^{100}g_S^{2n-4}(Q^2) N^{n-2}(N^2-1)\nonumber\\
+    && \times \sum_{i<j}\sum_{perm} \frac{1}{S_{ij}} \langle \psi_i |\alpha^\dag| \phi_j \rangle.
+\label{eq:multirownanie}
+\end{eqnarray}
+Ponieważ każde równanie jest częścią zdania, dlatego należy pamiętać o stosowaniu po nich odpowiednich znaków interpunkcyjnych.
+
+\section{Opis eksperymentu}
+W tej sekcji opisujemy główne elementy aparatury i stosowane procedury, zawsze odwołując się do rysunku/rysunków, który zawiera jej schemat blokowy lub schemat urządzenia, a także może obejmować najważniejsze etapy przetwarzania sygnału. Oprócz tego musimy tutaj podać informacje dotyczące badanej próbki i ewentualnie sposobu jej wytworzenia i przygotowania do pomiarów. Ponadto, niektóre dodatkowe informacje można umieścić na samych rysunkach lub w ich podpisach. Informacje podane w tej części sprawozdania muszą być na tyle szczegółowe aby umożliwić odtworzenie eksperymentu.
+\begin{figure}
+  \centering
+  \includegraphics [width=0.95\columnwidth] {polarymetr_PL.jpg}
+  \caption{\small Schemat układu doświadczalnego. Poszczególne skróty oznaczają: DAVL -- stabilizator długości fali światła laserowego, SAS -- nasyceniowa spektroskopia absorpcyjna, PBS -- polaryzacyjna kostka światłodzieląca, W -- pryzmat Wollastona, $\lambda/2$ -- płytka półfalowa używana razem z polaryzatorem Glana-Thompsona (POL) do regulacji natężenia światła. Sygnały informujące o skręceniu polaryzacji są rejestrowane za pomocą komputera (nie zamieszczony na schemacie).}
+  \label{fig:polarymetr}
+\end{figure}
+
+\textbf{Sekcję eksperymentalną można rozpocząć np. tak}:
+Układ eksperymentalny został przedstawiony na rysunku (\ref{fig:polarymetr}). Komórka z parami $^{85}$Rb jest pompowana i próbkowana światłem o polaryzacji liniowej, którego długość fali jest dostrojona do ,,czerwonego'' skrzydła przejścia $F=3 \rightarrow F'=0$, poszerzonego dopplerowsko. Cewki wytwarzające pole magnetyczne w kierunku $y$ są zasilane prądem stałym. Z kolei cewki wytwarzające pole magnetyczne w kierunkach $x$ i $z$ zasilane są zarówno prądem stałym jak i zmiennym w celu kompensacji i generacji pól rotującego i oscylującego. Skręcenie polaryzacji wiązki światła próbkującego jest mierzone za pomocą polarymetru kompensacyjnego z wykorzystaniem detekcji typu lock-in. Więcej szczegółów dotyczących samego układu doświadczalnego można znaleźć w pracy \cite{Pustelny}.
+
+\section{Wyniki i ich dyskusja}
+W tej sekcji przedstawiamy zwięzły opis opracowania danych eksperymentalnych, prezentujemy wyniki otrzymane na etapach pośrednich oraz wyniki końcowe. Należy pamiętać aby prezentowane wartości wielkości fizycznych miały odpowiednią liczbę cyfr znaczących, były opatrzone niepewnością i jednostką w układzie SI, np. $M_q=(7.13\pm0.06) \times 10^{-7}\;$kg. Szczegóły wyznaczenia samych niepewności należy umieścić w \emph{Dodatku}.
+\begin{table}[b]
+\begin{center}
+\renewcommand*{\tablename}{Tabela}
+\caption{\small Przykładowa tabela. Pamiętaj o użyciu odpowiednich jednostek SI oraz zamieszczeniu niepewności wartości wyznaczonych wielkości fizycznych.\vspace{0.15cm}
+    \label{tab:wyniki}}
+    {\small
+    \begin{tabular}{c c c c c c}
+    \hline \vspace{-0.35cm} \\
+      & $r_c$ ({\AA}) & $\kappa r_0$ &  & $r_c$ ({\AA}) & $\kappa r_0$ \\ \hline \vspace{-0.2cm} \\
+     Cu & 0.803(66) & 2.55(21) & Sn & 0.680(53) & 3.70(33) \\
+     Ag & 0.990(22) & 2.71(27) & Pb & 0.450(24) & 3.76(77) \\
+     Tl & 0.488(11) & 3.55(22) & & &  \vspace{0.1cm} \\
+    \hline
+    \end{tabular}}
+    \end{center}
+\end{table}
+Otrzymane wyniki najczęściej prezentujemy w formie rysunków (Rys.~\ref{fig:Wyniki_1kol},\ref{fig:Wyniki_2kol}) lub tabel (Tabela~\ref{tab:wyniki}) W zależności od ich rozmiaru mogą zajmować w tekście jedną lub dwie kolumny. Rysunki powinny być dobrze przemyślane i przygotowane, aby zmaksymalizować ich treść informacyjną przy jednoczesnym zachowaniu przejrzystości. Do każdego załączonego rysunku, wykresu czy tabeli musi być odsyłacz w tekście głównym sprawozdania lub w \emph{Dodatkach}.
+\begin{figure}
+  \centering
+  \includegraphics [width=0.82\columnwidth] {Al_TSspectra.jpg}
+  \caption{\small Widma rozpraszania światła laserowego (lewa kolumna) i przestrzenne rozkłady emisji plazmy (prawa kolumna) zarejestrowane za pomocą kamery ICCD dla przypadku plazmy powstałej na skutek laserowej ablacji płytki Al umieszczonej w atmosferze argonu pod ciśnieniem atmosferycznym. Widma rozpraszania zostały zarejestrowane dla warstw plazmy zaznaczonych pionowymi liniami przerywanymi. Gęstość energii impulsu laserowego na powierzchni płytki wynosiła około 30 J/cm$^2$. Szerokie spektralnie składowe widma rozpraszania odpowiadają części elektronowej rozpraszania Thomsona podczas gdy wąskie linie to składowe widma Ramana Al, Mg i cząsteczek azotu występujące odpowiednio w obszarze plazmy i poza nią. Skala barw odpowiada natężeniu rejestrowanego sygnału.}
+  \label{fig:Wyniki_1kol}
+\end{figure}
+
+\begin{figure*}
+  \centering
+  \includegraphics [width=0.72\textwidth] {Rys2kol_PL.png}
+  \caption{\small Dyfraktogram rentgenowski NiMn0.82Cr0.18Ge zarejestrowany w 90 K. Puste kółka to dane eksperymentalne, linia ciągła wynik dopasowania metodą Rietvelda, położenia refleksów braggowskich zaznaczone są pionowymi kreskami, a linia ciągła na dole wykresu obrazuje różnicę między danymi eksperymentalnymi a wynikiem dopasowania. We wstawkach przedstawiono: (a) zależność temperaturową zawartości fazy niskotemperaturowej w badanej próbce oraz (b) porównanie dyfraktogramów zarejestrowanych w temperaturze 90 K, 280 K i 480 K (pionowymi kreskami zaznaczono położenia refleksów braggowskich rombowej fazy niskotemperaturowej (LT) i heksagonalnej fazy wysokotemperaturowej (HT)).}
+  \label{fig:Wyniki_2kol}
+\end{figure*}
+Jeśli, na skutek jakichś okoliczności (np. awaria aparatury), okaże się, że nie można było uzyskać własnych danych, wówczas można użyć danych kolegów, pod warunkiem otrzymania wyraźnego pozwolenia opiekuna i odnotowania tego faktu w samym sprawozdaniu.
+
+\section{Podsumowanie i wnioski}
+W przeciwieństwie do \emph{Streszczenia} sekcja ta nie jest tylko podsumowaniem wyników pomiarów, ale raczej komentarzem do naukowego znaczenia tych wyników. Może także zawierać uwagi odnośnie sposobu poprawy ich jakości i wiarygodności. Podsumowanie jest kierowane do czytelnika, który zapoznał się z całością pracy.
+
+Dobrą praktyką po wydrukowaniu sprawozdania jest jego korekta pod kątem błędów w pisowni i gramatyce. Nic tak nie irytuje recenzenta jak niestaranność w przygotowaniu manuskryptu i zawsze działa na niekorzyść jego autora.
+\section*{Podziękowania}
+Dziękuję Czesławowi Czabackiemu za cenne dyskusje i wsparcie techniczne przy przeprowadzeniu eksperymentu. Dr. Damianowi Kowalskiemu dziękuję za udostępnienie próbek.
+
+\begin{thebibliography}{7}
+\bibitem{Pustelny}S.~Pustelny, L.~Busaite, M.~Auzinsh, A.~Akulshin, N.~Leefer, and D.~Budker, Phys. Rev. A \textbf{92}, 053410 (2015).
+\bibitem{Kittel}C. Kittel, \emph{Wstęp do fizyki ciała stałego}, PWN 1970, str. 15-91.
+\bibitem{Phillips}D.C. Phillips, Advances in Structure Research by Diffraction Methods \textbf{2}, 75 (1996).
+\bibitem{Bevington}P. Bevington and D. Robinson, Data Reduction and Error Analysis for the Physical Sciences, McGraw-Hill, 2003.
+\bibitem{SeeInternet}http://henke.lbl.gov/optical-constants/Xray interactions with matter.
+\bibitem{Instrukcja} Instrukcja do ćwiczenia Z1 (www.2pf.if.uj.edu.pl).
+\end{thebibliography}
+
+\section*{Dodatek A: \LaTeX\@  w systemie Windows}
+\label{dod:latex}
+Dla studentów używających systemu Windows, MIKTEX jest bezpłatną implementacją programów \TeX\@ dostępnym na stronie \texttt{www.miktex.org}.
+\section*{Dodatek B: Rachunek niepewności pomiarowych}
+\begin{center}
+\emph{Wyznaczanie niepewności pomiaru okresu wahadła}
+\end{center}
+\noindent Aby określić niepewność standardową obliczam odchylenie standardowe wielkości średniej
+\begin{displaymath}
+    S_{\bar{T}}=\sqrt{\frac{(T_i-T_{sr})^2}{n(n-1)}}=0.009189~\rm{s}.
+\end{displaymath}
+Następnie, korzystając z prawa przenoszenia niepewności, obliczam niepewność standardową całkowitą wyznaczenia wartości okresu
+\begin{displaymath}
+    u(T)=\sqrt{S^2_{\bar{T}}+\frac{(\Delta T)^2}{3}}=0.03458~\rm{s}.
+\end{displaymath}
+
+
+\end{document} 
