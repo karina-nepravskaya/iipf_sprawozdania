@@ -83,7 +83,15 @@ Obliczenia prowadź z pełną dostępną precyzją. Zaokrąglaj **dopiero wynik 
 
 Zapisuj liczbę i jednostkę ze spacją nierozdzielającą, prostą czcionką dla jednostki, np. \`\SI{10}{\metre\per\second\squared}\` albo \`\num{10}~\mathrm{m/s^2}\`. Nie zapisuj \`10m/s^2\`.
 
-Oddziel niepewności statystyczne i systematyczne przed ich połączeniem. Szczegółowy rachunek niepewności umieść w Dodatku. Każdy wynik musi mieć jednostkę oraz jasno opisaną definicję niepewności. Jeżeli porównujesz wynik z referencją, pokaż kryterium zgodności i liczby.
+Oddziel niepewności statystyczne i systematyczne przed ich połączeniem. Dla każdej wielkości wyznaczanej pośrednio z równania (y=f(x_1,\ldots,x_n)) oblicz niepewność zgodnie z **prawem przenoszenia niepewności**:
+[
+u(y)=\sqrt{\sum_i\left(\frac{\partial f}{\partial x_i}u(x_i)\right)^2},
+]
+a przy skorelowanych wielkościach uwzględnij wyrazy kowariancyjne. Szczegółowy rachunek niepewności umieść w Dodatku.
+
+Jeżeli wielkość wejściową przyjęto jako dokładną albo świadomie pominięto jej niepewność, zapisz to wyraźnie w raporcie przy pierwszym użyciu tej wielkości lub przy odpowiednim wzorze, wraz z uzasadnieniem. Przykład: „W obliczeniach przyjęto (a) jako wartość dokładną, dlatego jej wkład do niepewności (u(\lambda)) pominięto.” Nie wolno po prostu pominąć składnika w rachunku albo w notebooku bez takiej informacji w pracy.
+
+Każdy wynik musi mieć jednostkę oraz jasno opisaną definicję niepewności. Jeżeli porównujesz wynik z referencją, pokaż kryterium zgodności i liczby.
 
 ## Dopasowania, tabele i wykresy
 
