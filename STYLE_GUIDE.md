@@ -59,7 +59,7 @@ Preferowane konstrukcje:
 - „Porównując …, stwierdzono zgodność w granicach …”
 - „Na tej podstawie można stwierdzić, że…”
 
-Opis procedury ma czas przeszły i formę bezosobową: „zmierzono”, „zamocowano”, „wykonano zdjęcie”, „przeanalizowano”. Wyniki również opisuj w czasie przeszłym.
+Opis procedury ma czas przeszły i formę bezosobową: „zmierzono”, „zamocowano”, „wykonano zdjęcie”, „przeanalizowano”. W sekcji **Opis eksperymentu** i w opisie przebiegu nie wskazuj wykonawcy czynności: nie pisz „asystent ustawił”, „prowadzący wykonał” ani „ustawiliśmy”, jeżeli osoba nie jest fizycznie istotną częścią metody. Pisz: „ustawiono”, „wykonano”, „dokonano pomiaru”, „przeprowadzono analizę”. Wyniki również opisuj w czasie przeszłym.
 
 ## Równania, symbole i odnośniki
 
