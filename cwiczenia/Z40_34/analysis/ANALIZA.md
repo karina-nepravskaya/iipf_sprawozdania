@@ -27,7 +27,7 @@ W Z40, s. 1, przytoczono emisję całego źródła około $(7{,}7\pm1{,}5)\cdot1
 5. Pierwszy pomiar Mn pokazał linię około 847 keV. Po zmianie zakresu/wzmocnienia zmierzono Mn ponownie. Pierwotny eksport zapisany obecnie jako `Mn_zakres_2_oryginalny.lst` przypisywał maksimom w kanałach 466, 996 i 1162 około 338, 722 i 843 keV. Na prośbę użytkownika kolumnę energii w `Mn_zakres_2.lst` przeliczono liniowo z trzech punktów pliku `.clb`, zachowując nagłówek, numery kanałów i wszystkie zliczenia. Z punktów `kalibracja_Mn_Na_zakres2.clb` wynika $E(k)\simeq1{,}81930k-1{,}3474$ keV. Daje to dla tych kanałów około 846,45, 1810,68 i 2112,68 keV. Pierwsza linia 847 keV była punktem tej kalibracji, a pozostałe dwie są jej niezależną kontrolą. Są to wstępne maksima binów, nie centroidy z dopasowania. Widmo Na ma maksima w kanałach 282 i 701, zgodne z nowym zakresem i liniami 511 oraz 1274,6 keV. Widmo I pozostaje na starym zakresie (pik około kanału 612 odpowiada około 443 keV). Dlatego Na i I **nie mają tej samej kalibracji**, mimo że oba eksporty mają po dwie kolumny.
 6. Zmierzono drugą monetę. Au aktywowano przez około 3,5 h, a Cu przez około 4 h. Są to szacunki, więc ich precyzja musi wejść do analizy wrażliwości. Masy z fotografii etykiet i potwierdzenia użytkownika: $m_{\rm Au}=0{,}1328\ \mathrm{g}$ i $m_{\rm Cu}=0{,}1479\ \mathrm{g}$. W rachunku mają być przyjęte jako dokładne dane wejściowe zgodnie z podaną konwencją, co należy wyraźnie zaznaczyć w sprawozdaniu.
 7. Pierwszy pomiar Au wykonano około 16,9 cm od powierzchni HPGe. Nie zauważono w nim wyraźnego piku 412 keV. Od oderwania folii od AmBe do początku tego pomiaru minęło 61 s. Następnie folię umieszczono na powierzchni obudowy detektora. Drugi pomiar rozpoczął się według relacji po dalszych 17 min 03 s, czyli $t_{c,2}=1084$ s od wyjęcia. Nagłówki plików dają odstęp między początkami pomiarów 1016 s, a więc $61+1016=1077$ s. Różnica wynosi 7 s i należy ją oznaczyć jako niejednoznaczność, bez ukrytego poprawiania danych. Cu zmierzono na powierzchni obudowy po około 60 s od wyjęcia. Jej chłodzenie nie było zmierzone dokładnie.
-8. Dwa widma Au nie tworzą serii zaniku o stałej geometrii, ponieważ między nimi zmieniono odległość. Z drugiego Au i z piku 511 keV Cu oblicza się osobne wyniki strumienia. Linia 511 keV pochodzi z anihilacji i nie jest swoista dla $^{64}\mathrm{Cu}$; wynik Cu jest warunkowy.
+8. Dwa widma Au nie tworzą serii zaniku o stałej geometrii, ponieważ między nimi zmieniono odległość. Z drugiego Au i z piku 511 keV Cu oblicza się osobne wyniki strumienia. W instrukcji linię 511 keV przypisano $^{64}\mathrm{Cu}$. Jest to promieniowanie anihilacyjne, więc sama energia nie identyfikuje wyłącznie tego nuklidu; wynik Cu zakłada, że cały pik netto pochodzi z aktywowanej folii.
 
 W samym raporcie **nie dzielić opisu na pierwszy i drugi dzień**. Przedstawić ciągłą, bezosobową procedurę: pomiary kalibracyjne i tła, wcześniejszą aktywację próbek przez AmBe, rejestrację widm i zmianę zakresu tam, gdzie jest istotna dla osi energii. Nie opisywać niewykonanych pomiarów.
 
@@ -65,7 +65,7 @@ $$
 N_\gamma=\frac{t_l}{t_r}\,\varepsilon_{\rm foil}(E)I_\gamma\,\frac{\sigma\phi m g N_A}{M\lambda}\,(1-e^{-\lambda t_a})e^{-\lambda t_c}(1-e^{-\lambda t_r}),\qquad \lambda=\frac{\ln2}{T_{1/2}}.
 $$
 
-Tutaj $t_l$ jest czasem żywym, a $t_r$ rzeczywistym. Po przekształceniu otrzymuje się $\phi$, a nie całkowitą emisję źródła. Dla $^{197}\mathrm{Au}(n,\gamma)^{198}\mathrm{Au}$ używa się linii 412 keV oraz $\sigma=98{,}8\ \mathrm b$, $T_{1/2}=232675{,}2\ \mathrm s$, $g=1$, $I=0{,}95$, $M=196{,}967\ \mathrm{g/mol}$. Dla $^{63}\mathrm{Cu}(n,\gamma)^{64}\mathrm{Cu}$ instrukcja podaje $\sigma=4{,}5\ \mathrm b$, $T_{1/2}=46080\ \mathrm s$, $g=0{,}6915$, $I_{511}=0{,}38$, $M=62{,}93\ \mathrm{g/mol}$. Pik 511 keV może mieć inne źródła, dlatego liczbowe $\phi_{\rm Cu}$ oznacza się jako wynik warunkowy po przypisaniu piku netto do $^{64}\mathrm{Cu}$.
+Tutaj $t_l$ jest czasem żywym, a $t_r$ rzeczywistym. Po przekształceniu otrzymuje się $\phi$, a nie całkowitą emisję źródła. Dla $^{197}\mathrm{Au}(n,\gamma)^{198}\mathrm{Au}$ używa się linii 412 keV oraz $\sigma=98{,}8\ \mathrm b$, $T_{1/2}=232675{,}2\ \mathrm s$, $g=1$, $I=0{,}95$, $M=196{,}967\ \mathrm{g/mol}$. Dla $^{63}\mathrm{Cu}(n,\gamma)^{64}\mathrm{Cu}$ instrukcja podaje $\sigma=4{,}5\ \mathrm b$, $T_{1/2}=46080\ \mathrm s$, $g=0{,}6915$, $I_{511}=0{,}38$, $M=62{,}93\ \mathrm{g/mol}$. Instrukcja przypisuje 511 keV reakcji prowadzącej do $^{64}\mathrm{Cu}$ i z tej identyfikacji korzysta się w rachunku. Fotony 511 keV powstają jednak przy anihilacji pozytonów także z innych radionuklidów; sama energia nie rozstrzyga pochodzenia całego pola piku. Wynik $\phi_{\rm Cu}$ zakłada przypisanie pola netto do $^{64}\mathrm{Cu}$.
 
 **Przeliczenie wydajności do geometrii folii.** Eu zmierzono 16,9 cm od powierzchni obudowy, a folie położono na niej. Z charakterystyki detektora wynika 3 mm odstępu okno–kryształ oraz 70 mm długości kryształu. Dla uproszczonego prawa odwrotnych kwadratów przyjęto efektywną płaszczyznę w połowie długości kryształu. Daje to $d_0=0{,}3+7{,}0/2=3{,}8\ \mathrm{cm}$ i $G=[(16{,}9+d_0)/d_0]^2=29{,}674$. Zatem $\varepsilon_{\rm folia}(E)=G\varepsilon_{\rm Eu}(E)$. Jest to **założenie**, a nie zmierzona głębokość oddziaływań gamma. Podstawienie samych 3 mm dawałoby dla Au wydajność ponad 1, co jest niemożliwe. Dla bliskiej folii prawo $1/r^2$ jest tylko przybliżeniem; model nie obejmuje jej rozmiarów i odpowiedzi detektora zależnej od kąta. Nie porównywać uzyskanego lokalnego $\phi$ w $\mathrm{n\,cm^{-2}s^{-1}}$ bezpośrednio z emisją całego AmBe w $\mathrm{n/s}$.
 
@@ -73,7 +73,7 @@ Tutaj $t_l$ jest czasem żywym, a $t_r$ rzeczywistym. Po przekształceniu otrzym
 
 1. W notebooku wczytać widma, tło i obie kalibracje z `.clb`. Zweryfikować poprawioną oś energii drugiego Mn, zachowując surowe zliczenia bez zmian.
 2. Dla trzeciego Eu dopasować Gaussa do **wszystkich 13 linii gamma wymienionych w świadectwie**. Po odjęciu przeskalowanego długiego tła wyznaczyć pola netto $N\pm u(N)$, aktywność Eu w dniu pomiaru i punkty $\varepsilon(E)$. Do wszystkich punktów dopasować wielomian w logarytmach z instrukcji Z40.
-3. Dla folii obliczyć z tej krzywej $\varepsilon_{\rm Eu}(411{,}8\ \mathrm{keV})$ oraz orientacyjnie $\varepsilon_{\rm Eu}(511{,}0\ \mathrm{keV})$. Obie wartości przeliczyć na geometrię folii przez $G=29{,}674$. Dla Au i Cu dopasować pola netto po odjęciu tła, a następnie osobno podstawić je do wzoru aktywacji. Przy Cu jawnie wskazać nieswoistość linii 511 keV.
+3. Dla folii obliczyć z tej krzywej $\varepsilon_{\rm Eu}(411{,}8\ \mathrm{keV})$ oraz orientacyjnie $\varepsilon_{\rm Eu}(511{,}0\ \mathrm{keV})$. Obie wartości przeliczyć na geometrię folii przez $G=29{,}674$. Dla Au i Cu dopasować pola netto po odjęciu tła, a następnie osobno podstawić je do wzoru aktywacji. Przy Cu podać przypisanie linii 511 keV do $^{64}\mathrm{Cu}$ zgodnie z instrukcją oraz warunek tego przypisania przy wyznaczaniu strumienia.
 4. Cs, Co, Mn, Na, I, monety i pierwszy Au przedstawić jako widma poglądowe. W pierwszym Au pik około 412 keV nie jest rozróżnialny od tła. Cel rejestracji widm pomocniczych opisać w raporcie w 2–3 zdaniach, bez tabel pól, centroidów i osobnych analiz.
 5. W rachunku Au przyjąć $t_a\approx3{,}5\ \mathrm h$, $t_c=1084\ \mathrm s$ oraz masę $0{,}1328\ \mathrm g$. Dla Cu przyjąć $t_a\approx4\ \mathrm h$, $t_c\approx60\ \mathrm s$ i masę $0{,}1479\ \mathrm g$ do drugiego rachunku strumienia.
 
@@ -81,7 +81,7 @@ Tutaj $t_l$ jest czasem żywym, a $t_r$ rzeczywistym. Po przekształceniu otrzym
 
 Aktywność Eu podczas trzeciego pomiaru wynosi $A\approx64{,}56\ \mathrm{kBq}$. Dla wszystkich 13 linii ze świadectwa obliczono wydajności punktowe po odjęciu tła. Dopasowania lokalne linii 121,8 i 1085,8 keV mają większe odchylenia od modelu Gaussa z prostą; punkty pozostawiono na wykresie zgodnie z przyjętym zakresem analizy. Wielomian dopasowany do tych punktów daje $\varepsilon_{\rm Eu}(411{,}8\ \mathrm{keV})\approx0{,}0013872$ z warunkową $u\approx0{,}0000646$. Dla folii Au przy $d_0=3{,}8\ \mathrm{cm}$ uzyskuje się $\varepsilon_{\rm Au}(411{,}8\ \mathrm{keV})\approx0{,}04116$. W okolicy 511 keV analogiczne przybliżenie daje $\varepsilon_{\rm Cu}(511{,}0\ \mathrm{keV})\approx0{,}03409$.
 
-Drugi pomiar Au po odjęciu tła daje $N=(198{,}5\pm20{,}1)$ zliczeń. Dla przyjętych czasów i wydajności wzór aktywacji daje warunkowo $\phi=(2480\pm277)\ \mathrm{n\,cm^{-2}s^{-1}}$. Ta niepewność obejmuje jedynie pole Au i wydajność Eu przy ustalonym $G$; nie obejmuje niepewności założonego położenia efektywnej płaszczyzny detekcji ani widma neutronów. Dla Cu pole netto po odjęciu długiego tła wynosi $N=(92{,}0\pm19{,}5)$ zliczeń. Przy $t_a\approx4\ \mathrm h$ i $t_c\approx60\ \mathrm s$ otrzymano $\phi_{\rm Cu}=(4617\pm994)\ \mathrm{n\,cm^{-2}s^{-1}}$, czyli około 1,86 razy więcej niż z Au. Pojedynczy pik anihilacyjny 511 keV nie potwierdza jednoznacznie, że całe pole pochodzi z $^{64}\mathrm{Cu}$; wynik Cu jest szczególnie wrażliwy na odjęcie linii tła z innego dnia. Pierwszy pomiar Au z większej odległości nie pokazuje rozróżnialnego piku około 412 keV.
+Drugi pomiar Au po odjęciu tła daje $N=(198{,}5\pm20{,}1)$ zliczeń. Dla przyjętych czasów i wydajności wzór aktywacji daje warunkowo $\phi=(2480\pm277)\ \mathrm{n\,cm^{-2}s^{-1}}$. Ta niepewność obejmuje jedynie pole Au i wydajność Eu przy ustalonym $G$; nie obejmuje niepewności założonego położenia efektywnej płaszczyzny detekcji ani widma neutronów. Dla Cu pole netto po odjęciu długiego tła wynosi $N=(92{,}0\pm19{,}5)$ zliczeń. Przy $t_a\approx4\ \mathrm h$ i $t_c\approx60\ \mathrm s$ otrzymano $\phi_{\rm Cu}=(4617\pm994)\ \mathrm{n\,cm^{-2}s^{-1}}$, czyli około 1,86 razy więcej niż z Au. Przypisanie całego piku 511 keV po odjęciu tła $^{64}\mathrm{Cu}$ wynika z instrukcji, lecz sama energia jest wspólna dla promieniowania anihilacyjnego różnych źródeł. Wynik Cu jest szczególnie wrażliwy na odjęcie linii tła z innego dnia. Pierwszy pomiar Au z większej odległości nie pokazuje rozróżnialnego piku około 412 keV.
 
 ## 6. Niepewności w przyjętym rachunku
 
@@ -98,12 +98,54 @@ Masy Au $0{,}1328\ \mathrm g$ i Cu $0{,}1479\ \mathrm g$ pochodzą z etykiet. Ni
 
 ## 7. Plan wykresów, tabel i wyników
 
+Wybrane maksima widm pomocniczych wyznaczono jako środki kanałów o największej liczbie zliczeń w sąsiedztwie linii. Dla szerokości kanału $\Delta E$ podano wyłącznie niepewność odczytu $u_{\rm bin}=\Delta E/\sqrt{12}$. Jest to składnik wynikający z dyskretyzacji energii, **nie pełna niepewność energii**: pomija statystyczne wahania kształtu piku oraz błąd lub dryf kalibracji. W bliskim pomiarze Cs pik jest wyraźnie przesunięty względem wartości tablicowej. Maksima 511 keV monet nie określają ich składu, a linia 1461 keV widoczna w widmach pochodzi także z tła.
+
+| Widmo pokazane poglądowo | Charakterystyczne maksima kanałowe $E_{\rm max}\pm u_{\rm bin}$ [keV] |
+|---|---|
+| Cs, pomiar 1 (dalej) | $662{,}0\pm0{,}2$ |
+| Cs, pomiar 5 (blisko) | $668{,}5\pm0{,}2$ |
+| Co, pomiar 3 | $1172{,}1\pm0{,}2$; $1330{,}3\pm0{,}2$ |
+| Mn, stary zakres | $847{,}0\pm0{,}2$ |
+| Mn, nowy zakres | $846{,}4\pm0{,}5$; $1810{,}7\pm0{,}5$; $2112{,}7\pm0{,}5$ |
+| Na, nowy zakres | $511{,}7\pm0{,}5$; $1274{,}0\pm0{,}5$ |
+| I, stary zakres | $442{,}8\pm0{,}2$ |
+| Moneta 1 | około $510{,}3\pm0{,}2$ (linia 511 keV, pochodzenie nieustalone) |
+| Moneta 2 | około $511{,}0\pm0{,}2$ (linia 511 keV, pochodzenie nieustalone) |
+| Pierwszy Au, 16,9 cm | Nie rozróżniono piku 412 keV od tła. |
+
+Te wartości wystarczą jako krótkie podpisy lub zdania przy widmach. Nie prowadzić dla nich odrębnego rachunku pól. W raporcie przy każdej przytoczonej niepewności odczytu zaznaczyć, że wynika z szerokości kanału, a nie z pełnej kalibracji.
+
+
 | Element | Funkcja |
 |---|---|
-| Widma pomocnicze | Pokazać wybrane Cs, Co, Mn, Na, I, monety i pierwszy Au z osiami i jednostkami. Dodać 2–3 zdania o nauce obsługi układu, sprawdzeniu zakresu energii i rejestracji próbek aktywowanych. Bez tabel dopasowań. |
+| Widma pomocnicze | Pokazać wybrane Cs, Co, Mn, Na, I, monety i pierwszy Au z osiami i jednostkami. Przy każdym wskazać zaobserwowane maksima i $u_{\rm bin}$ z powyższej tabeli. Dodać 2–3 zdania o celu rejestracji bez odrębnych analiz pól. |
 | Eu i krzywa wydajności | Tabela 13 linii: energia, intensywność, pole netto i wydajność. Wykres punktów z krzywą Z40 dla 16,9 cm. |
 | Folie Au i Cu | Fragmenty widm po odjęciu tła, dopasowania Gaussa, pola netto, przeliczenie wydajności przez $G$ i dwa warunkowe wyniki strumienia. |
-| Pierwszy Au i ograniczenie Cu | W pierwszym Au pik 412 keV jest nierozróżnialny od tła. Przy wyniku Cu podać, że 511 keV jest linią nieswoistą. |
+| Pierwszy Au i ograniczenie Cu | W pierwszym Au pik 412 keV jest nierozróżnialny od tła. Przy wyniku Cu podać, że w instrukcji linię 511 keV przypisano $^{64}\mathrm{Cu}$; jej energia wynika z anihilacji. |
+
+### Wzory do umieszczenia w sprawozdaniu
+
+Przy obliczeniach podać wzory użyte w notebooku wraz z definicjami symboli i przyjętymi wartościami dokładnymi:
+
+$$
+A_{\rm Eu}=A_0 2^{-\Delta t/T_{1/2,\rm Eu}},\qquad
+\varepsilon_{\rm Eu}(E)=\frac{N_{\rm Eu}(E)}{A_{\rm Eu}I_\gamma(E)t_{l,\rm Eu}},
+$$
+
+$$
+\ln\varepsilon_{\rm Eu}=c_3(\ln E)^3+c_2(\ln E)^2+c_1\ln E+c_0,\qquad
+G=\left(\frac{16{,}9+d_0}{d_0}\right)^2,\quad
+\varepsilon_{\rm folia}(E)=G\varepsilon_{\rm Eu}(E),
+$$
+
+$$
+\lambda=\frac{\ln2}{T_{1/2}},\qquad
+\phi=\frac{N_\gamma M\lambda t_r e^{\lambda t_c}}
+{\varepsilon_{\rm folia}I_\gamma t_l\sigma m g N_A
+(1-e^{-\lambda t_a})(1-e^{-\lambda t_r})}.
+$$
+
+Wstawia się osobno liczby Au dla 412 keV i Cu dla 511 keV. Podać także prawo przeniesienia niepewności użyte liczbowo: $u(\varepsilon)=\varepsilon\sqrt{[u(N)/N]^2+[u(A)/A]^2}$ oraz $u(\phi)=\phi\sqrt{[u(N)/N]^2+[u(\varepsilon)/\varepsilon]^2}$. $I_\gamma$, $t_l$, masy i parametry tablicowe traktuje się w tym rachunku jako zadane bez niepewności. Nie przenosić do wyniku Au lub Cu energii maksimum pomocniczego piku zamiast energii linii ze świadectwa.
 
 ## 8. Proponowany układ raportu w etapie 2
 
