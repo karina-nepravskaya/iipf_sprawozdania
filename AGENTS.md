@@ -52,7 +52,7 @@ Rozpocznij wyłącznie po zatwierdzeniu analizy.
 
 ## Język i styl
 
-Stosuj instrukcje z \`STYLE_GUIDE.md\` dosłownie. Piszesz rzeczowo, prostymi zdaniami, w czasie przeszłym i bez ozdobników. Podczas opisu czynności preferuj stronę bezosobową: „Ustawiono”, „Zmierzono”, „Wyznaczono”.
+Stosuj instrukcje z \`STYLE_GUIDE.md\` dosłownie. W opisie przebiegu doświadczenia stosuj wyłącznie czas przeszły i formę bezosobową: „ustawiono”, „wykonano”, „dokonano pomiaru”, „przeprowadzono analizę”. Nie wskazuj, czy czynność wykonała studentka, asystent czy prowadzący, chyba że ta rola ma bezpośrednie znaczenie dla metody albo niepewności pomiaru. Pozostały tekst pisz rzeczowo, prostymi zdaniami, w czasie przeszłym i bez ozdobników.
 
 Każdy symbol musi być zdefiniowany przy pierwszym użyciu. Każda tabela i każdy rysunek muszą zostać omówione w tekście. Wnioski mają odpowiadać na cel ćwiczenia i wynikać z liczb, a nie z deklaracji typu „wyniki były dobre”.
 
