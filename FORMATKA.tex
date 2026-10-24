@@ -1,0 +1,62 @@
+% Formatka sprawozdania IIPF
+% Wzorzec składu: raport_praktyka_Nepravskaya_Karina.pdf
+% Kompilacja: pdfLaTeX + BibTeX + pdfLaTeX x2
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+
+\sisetup{output-decimal-marker={,},group-separator={\,},detect-weight=true}
+\setlength{\parskip}{0.4em}
+\graphicspath{{../figures/}}
+
+\title{\textbf{Tytuł ćwiczenia}}
+\author{Karina Nepravskaya}
+\date{Kraków \the\year}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+% Cel, metoda i główne wyniki liczbowe z niepewnościami.
+\end{abstract}
+
+% Odkomentuj wyłącznie, gdy wymaga tego prowadzący lub długość raportu.
+% \tableofcontents
+% \newpage
+
+\section{Wstęp teoretyczny}
+% Tylko teoria konieczna do opisu metody i interpretacji wyniku.
+
+\section{Cel ćwiczenia}
+
+\section{Aparatura}
+
+\section{Przebieg doświadczenia}
+% Opis faktycznie wykonanych czynności, w czasie przeszłym i stronie bezosobowej.
+
+\section{Opracowanie wyników}
+% Wprowadź symbole, równania, obliczenia, dopasowania, tabele i wykresy.
+
+\section{Niepewności pomiarowe}
+
+\section{Wyniki}
+
+\section{Wnioski i podsumowanie}
+
+\begin{thebibliography}{9}
+\bibitem{instrukcja}
+Instrukcja do ćwiczenia laboratoryjnego, dostęp: dzień miesiąc rok.
+\end{thebibliography}
+
+\end{document}
