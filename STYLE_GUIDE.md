@@ -1,22 +1,52 @@
-# Styl Kariny dla sprawozdań
+# Styl Kariny i wymagania Pracowni dla sprawozdań
 
-Ta instrukcja powstała na podstawie `main.tex` z pracy licencjackiej oraz `Dlugosc_fali_Nepravskaya_Karina.pdf`. Praca licencjacka jest źródłem precyzji terminologicznej. Sprawozdanie z długości fali jest głównym wzorcem stylu laboratoryjnego.
+Ten dokument łączy trzy źródła, w tej kolejności:
 
-## Ton
+1. **wymagania formalne Pracowni Fizycznej UJ** z dokumentu „Kilka wskazówek dotyczących przygotowywania sprawozdań” (Tomasz Kawalec, październik 2021);
+2. **formatka** z `FORMATKA.tex`, zgodna z układem dokumentu `raport_praktyka_Nepravskaya_Karina.pdf`;
+3. styl językowy Kariny, wyprowadzony z `main.tex`, `raport_praktyka_Nepravskaya_Karina.pdf` i `Dlugosc_fali_Nepravskaya_Karina.pdf`.
+
+Gdy styl i formalne zalecenie są sprzeczne, obowiązuje zalecenie Pracowni. Nie negocjuj tego z własnym gustem: fizyka eksperymentalna ma dość losowych formatowań.
+
+## Formatka dokumentu
+
+Nowy raport rozpoczynaj od `FORMATKA.tex`. Zachowaj:
+
+- A4, `12pt`, marginesy `2.5 cm`, język polski i kodowanie UTF-8;
+- pakiety i ustawienie `siunitx` z przecinkiem dziesiętnym;
+- tytuł, autora „Karina Nepravskaya” i datę „Kraków …”;
+- streszczenie po tytule;
+- podpis **nad tabelą** i **pod rysunkiem**;
+- tabelaryczne linie `booktabs`, bez pionowych kresek;
+- grafikę wektorową, gdy jest dostępna; grafikę rastrową o rozdzielczości co najmniej 300 DPI, jeśli raport będzie drukowany.
+
+Spis treści dodawaj tylko, gdy raport jest na tyle długi albo instrukcja prowadzącego wyraźnie go wymaga. Nie upychaj tabel przez `\small` tylko po to, żeby „się zmieściło”; najpierw skróć nagłówki, przeorganizuj tabelę albo podziel ją logicznie.
+
+## Streszczenie
+
+Streszczenie zawiera wyłącznie:
+
+1. cel pomiaru,
+2. zastosowaną metodę,
+3. główne wyniki liczbowe razem z niepewnościami i warunkami istotnymi dla wyniku.
+
+Nie opisuj w nim montowania układu, kolejnych kliknięć w programie, faktu uczestnictwa w ćwiczeniu ani odnośników do literatury, równań, rysunków i tabel. Musi dać się przeczytać osobno. Wzorzec:
+
+> Metodą … wyznaczono … . Dla … otrzymano … .
+
+## Ton i składnia
 
 - Polski techniczny, prosty, konkretny i spokojny.
-- Zdania raczej krótkie. Jeden akapit powinien prowadzić jedną myśl.
-- Bez patosu, marketingu i ozdobników: nie używaj „kluczowy”, „fascynujący”, „bardzo istotny”, „niewątpliwie”, „znacząco” bez liczbowego uzasadnienia.
-- Nie udawaj pewności, której nie dają dane. Zamiast „udowodniono” używaj „otrzymano”, „porównanie wskazuje”, „wynik jest zgodny w granicach niepewności”.
-- Nie dopisuj wiedzy teoretycznej, która nie służy obliczeniom albo interpretacji wyniku.
+- Zdania raczej krótkie; jeden akapit rozwija jedną myśl.
+- Bez patosu, marketingu i ozdobników: nie używaj „kluczowy”, „fascynujący”, „niewątpliwie”, „bardzo istotny” ani „znacząco” bez liczbowego uzasadnienia.
+- Nie udawaj pewności, której nie dają dane. Zamiast „udowodniono” używaj „otrzymano”, „porównanie wskazuje” albo „wynik jest zgodny w granicach niepewności”.
+- Teoria służy metodzie i interpretacji. Nie jest streszczeniem podręcznika.
 
-## Konstrukcje charakterystyczne
-
-Preferowane są konstrukcje:
+Preferowane konstrukcje:
 
 - „Celem ćwiczenia jest wyznaczenie…”
 - „Do pomiaru wykorzystano…”
-- „Układ eksperymentalny przedstawiono na Rys. …”
+- „Układ eksperymentalny przedstawiono na rys. …”
 - „Ustawiono…, a następnie…”
 - „Dla każdej serii pomiarów wyznaczono…”
 - „Z otrzymanych punktów sporządzono wykres…”
@@ -26,35 +56,59 @@ Preferowane są konstrukcje:
 - „Porównując …, stwierdzono zgodność w granicach …”
 - „Na tej podstawie można stwierdzić, że…”
 
-Opis procedury ma czas przeszły i formę bezosobową: „zmierzono”, „zamocowano”, „wykonano zdjęcie”, „przeanalizowano”. Wyniki również opisuj w czasie przeszłym: „współczynnik kierunkowy wyniósł…”.
+Opis procedury ma czas przeszły i formę bezosobową: „zmierzono”, „zamocowano”, „wykonano zdjęcie”, „przeanalizowano”. Wyniki również opisuj w czasie przeszłym.
 
-## Struktura wyjaśnienia
+## Równania, symbole i odnośniki
 
-1. Najpierw podaj, co wyznaczano albo obliczano.
-2. Następnie podaj definicję symboli i równanie.
-3. Dopiero potem opisz obliczenie lub dopasowanie.
-4. Na końcu podaj wynik z jednostką i niepewnością oraz jego interpretację.
+Najpierw napisz, co jest wyznaczane. Następnie wprowadź równanie i zdefiniuj każdy nowy symbol. Każde równanie jest częścią zdania, więc kończy się przecinkiem albo kropką. Stosuj `\left(\right)`, `\left[\right]` i `\left\lvert\right\rvert`, gdy rozmiar nawiasów powinien dopasować się do wyrażenia.
 
-Przed równaniem wprowadź pojęcie zdaniem. Bezpośrednio po nim wyjaśnij nowe symbole. Nie zostawiaj „gołego” wzoru bez sensu fizycznego.
+Symbole zapisuj w trybie matematycznym również w zdaniu, np. `czas $t$`, `pęd $p$`. Symbol w tekście ma wyglądać dokładnie tak jak w równaniu.
+
+Odwołania zapisuj konsekwentnie:
+
+- równanie: „z równania (6) wynika…”;
+- literatura: „w pracy [1]…”;
+- rysunek: „na rys. 1…” — bez nawiasów wokół numeru.
 
 ## Liczby, jednostki i niepewności
 
-- Stosuj przecinek dziesiętny, np. (0{,}25\ \mathrm{mm}).
-- Wynik zapisuj jako ((x \pm u)\ \mathrm{jednostka}), po rozsądnym zaokrągleniu niepewności i wartości.
-- Zawsze podawaj jednostkę wielkości fizycznej oraz jednostki na osiach wykresu.
-- Oddziel niepewności statystyczne i systematyczne, zanim je połączysz.
-- Jeżeli porównujesz wynik z referencją, pokaż kryterium zgodności i liczby, nie tylko werdykt.
+Obliczenia prowadź z pełną dostępną precyzją. Zaokrąglaj **dopiero wynik końcowy**:
 
-## Rysunki i tabele
+1. niepewność zaokrąglij w górę do dwóch cyfr znaczących;
+2. wartość zaokrąglij zwyczajnie do tego samego miejsca dziesiętnego;
+3. nie usuwaj końcowego zera, jeżeli informuje ono o precyzji, np. (51{,}0 \pm 0{,}1), a nie (51 \pm 0{,}1).
 
-Podpis ma powiedzieć, co przedstawiono, jakie wielkości porównano i dla jakiego przypadku. Przykładowy wzór: „Zależność … od … dla …”. Tekst przed lub po rysunku musi powiedzieć, po co on jest i jaki wniosek z niego wynika.
+Zapisuj liczbę i jednostkę ze spacją nierozdzielającą, prostą czcionką dla jednostki, np. `\SI{10}{\metre\per\second\squared}` albo `\num{10}~\mathrm{m/s^2}`. Nie zapisuj `10m/s^2`.
 
-Nie umieszczaj tabeli lub wykresu tylko „bo raport tak wygląda”. Każdy ma odpowiadać na konkretne pytanie analizy.
+Oddziel niepewności statystyczne i systematyczne przed ich połączeniem. Każdy wynik musi mieć jednostkę oraz jasno opisaną definicję niepewności. Jeżeli porównujesz wynik z referencją, pokaż kryterium zgodności i liczby.
 
-## Czego nie robić
+## Dopasowania, tabele i wykresy
 
-- Nie kopiuj zdań z instrukcji prowadzącego ani z Wikipedii.
-- Nie stosuj potoczności i emocjonalnych ocen.
-- Nie zastępuj opisu rzeczywistego doświadczenia ogólnym opisem z instrukcji.
-- Nie pisz „widać, że” bez wskazania, co dokładnie i z jakich liczb lub cech wykresu wynika.
-- Nie zaczynaj wniosków od powtórzenia całego przebiegu doświadczenia.
+- W tekście lub podpisie podaj pełną postać dopasowanej funkcji.
+- Podaj parametry dopasowania wraz z prawidłowo zaokrągloną niepewnością i jednostką.
+- Nie wklejaj surowej tabelki z Origin, Excelu ani innego programu. Taka tabela zwykle nie ma jednostek, kontekstu i sensownego zaokrąglenia.
+- Osie, legenda, liczby i czcionki na wykresie muszą być czytelne w PDF.
+- Zestawy danych muszą różnić się także w skali szarości: używaj symboli, stylów linii lub grubości, nie tylko koloru.
+- Każdy rysunek i każda tabela muszą zostać omówione w tekście oraz odpowiadać na pytanie analizy.
+
+Podpis powinien mówić, co przedstawiono, jakie wielkości porównano i dla jakiego przypadku, np. „Zależność … od … dla …”.
+
+## Polska typografia LaTeX
+
+- Łącznik w nazwie złożonej: `-`, np. Fabry'ego-Pérota.
+- Zakres liczbowy: `--` bez spacji, np. `123--456`.
+- Myślnik w zdaniu: `---` ze spacjami po obu stronach.
+- Polski cudzysłów: `,,tekst''`. Angielski: ```text''`. Nie stosuj prostych `"tekst"`.
+- Stosuj `~` między liczbą i jednostką, po jednoliterowym przyimku oraz tam, gdzie rozdzielenie na końcu wiersza byłoby błędne.
+
+## Końcowa kontrola
+
+Przed oddaniem PDF sprawdź:
+
+- czy streszczenie zawiera cel, metodę i wyniki z niepewnościami;
+- czy wszystkie liczby, jednostki, niepewności i oznaczenia są spójne;
+- czy wykresy są czytelne także po wydruku;
+- czy w PDF są polskie znaki, litery greckie i poprawnie złożone wzory;
+- czy odnośniki, podpisy i bibliografia działają;
+- czy dane w raporcie mają źródło w `data/raw/` albo w zatwierdzonej analizie;
+- czy nie wprowadzono wyniku tylko dlatego, że „ładnie wygląda”.
