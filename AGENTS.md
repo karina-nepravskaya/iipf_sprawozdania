@@ -48,7 +48,7 @@ Rozpocznij wyłącznie po zatwierdzeniu analizy.
 6. Skompiluj dokument i sprawdź: streszczenie, jednostki, zaokrąglenia, interpunkcję po wzorach, nierozdzielanie liczb i jednostek, numerację, odwołania, dane źródłowe oraz brak ostrzeżeń wpływających na wynik.
 7. Zapisz gotowy PDF w `report/`.
 
-Raport ma zwykle zawierać: streszczenie, wstęp teoretyczny tylko w zakresie potrzebnym do analizy, cel, aparaturę, przebieg, opracowanie wyników, niepewności, wyniki, wnioski i bibliografię. Spis treści dodawaj, gdy wymaga go instrukcja albo długość dokumentu. Nie kopiuj struktury mechanicznie, jeżeli prowadzący wymaga innej.
+Raport ma zwykle zawierać: streszczenie, spis treści, wstęp teoretyczny tylko w zakresie potrzebnym do analizy, cel, aparaturę, przebieg, opracowanie wyników, niepewności, wyniki, wnioski i bibliografię. Nie kopiuj struktury mechanicznie, jeżeli prowadzący wymaga innej.
 
 ## Język i styl
 
