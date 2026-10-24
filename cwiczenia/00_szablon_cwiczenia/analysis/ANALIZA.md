@@ -32,18 +32,29 @@
 |---|---|---|---|
 | | | | |
 
-## 7. Plan tabel i rysunków
+Dla każdej wielkości wyznaczanej pośrednio zapisz wzór przenoszenia niepewności. Jeżeli któraś zmienna wejściowa ma być przyjęta jako dokładna, podaj uzasadnienie oraz zdanie, które zostanie umieszczone w raporcie.
+
+## 7. Plan notebooka Colab
+
+- Ścieżka: `data/processed/analiza.ipynb`
+- Dane wejściowe:
+- Kroki obliczeń:
+- Tabele pośrednie:
+- Wykresy generowane przez notebook:
+- Wyniki końcowe przekazywane do raportu:
+
+## 8. Plan tabel i rysunków
 
 | Element | Dane wejściowe | Co ma pokazać |
 |---|---|---|
 | | | |
 
-## 8. Proponowana struktura raportu
+## 9. Proponowana struktura raportu
 
 1. 
 2. 
 3. 
 
-## 9. Braki danych i pytania
+## 10. Braki danych i pytania
 
 <!-- Pytania muszą być konkretne. Jeżeli braków nie ma, wpisz „Brak”. -->

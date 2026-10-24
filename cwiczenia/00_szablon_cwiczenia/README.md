@@ -11,4 +11,6 @@ Następnie uzupełnij najpierw:
 3. oryginalną instrukcję w `instructions/`;
 4. dane, zdjęcia i notatki z pomiarów w `data/raw/`.
 
+W etapie 2 agent utworzy w `data/processed/` notebook `analiza.ipynb`, który można otworzyć bezpośrednio w Google Colab. Notebook jest źródłem obliczeń i wykresów, więc przechowuj go w repozytorium razem z raportem.
+
 Dopiero potem uruchom etap analizy opisany w głównym `AGENTS.md`.

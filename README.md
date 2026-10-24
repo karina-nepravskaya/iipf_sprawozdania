@@ -16,7 +16,7 @@ Pełne reguły są w [AGENTS.md](AGENTS.md). Styl, wymagania Pracowni i kontrola
 - `brief/` — opis rzeczywistego przebiegu oraz wymagania prowadzącego zapisane własnymi słowami;
 - `instructions/` — oryginalne instrukcje, najczęściej PDF;
 - `data/raw/` — niezmieniane dane pomiarowe i zdjęcia;
-- `data/processed/` — dane po obróbce oraz skrypty obliczeń;
+- `data/processed/` — dane po obróbce, skrypty oraz obowiązkowy notebook Colab `analiza.ipynb`, który odtwarza obliczenia, tabele i wykresy;
 - `figures/` — wykresy i fotografie użyte w raporcie;
 - `analysis/` — analiza przed zatwierdzeniem;
 - `report/` — źródła LaTeX i końcowy PDF;
