@@ -20,7 +20,7 @@ Nowy raport rozpoczynaj od `FORMATKA.tex`. Zachowaj:
 - tabelaryczne linie `booktabs`, bez pionowych kresek;
 - grafikę wektorową, gdy jest dostępna; grafikę rastrową o rozdzielczości co najmniej 300 DPI, jeśli raport będzie drukowany.
 
-Spis treści dodawaj tylko, gdy raport jest na tyle długi albo instrukcja prowadzącego wyraźnie go wymaga. Nie upychaj tabel przez `\small` tylko po to, żeby „się zmieściło”; najpierw skróć nagłówki, przeorganizuj tabelę albo podziel ją logicznie.
+Po streszczeniu zawsze umieść spis treści. Nie upychaj tabel przez `\small` tylko po to, żeby „się zmieściło”; najpierw skróć nagłówki, przeorganizuj tabelę albo podziel ją logicznie.
 
 ## Streszczenie
 
